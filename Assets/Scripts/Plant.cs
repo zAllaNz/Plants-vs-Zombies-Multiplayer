@@ -5,6 +5,9 @@ public class PlantManager : MonoBehaviour
     public GameObject selectedPlantPrefab; // Prefab da planta selecionada
     private Camera mainCamera;
 
+    public int hp = 100;
+    public int sunCost = 100;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -20,17 +23,19 @@ public class PlantManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Tile tile = hit.collider.GetComponent<Tile>();
+                /*
 
                 // Se clicou em um tile válido e ele não tem planta
-                if (tile != null && !tile.hasPlant && selectedPlantPrefab != null)
+                if (tile != null && !tile.has_plant && selectedPlantPrefab != null)
                 {
                     // Instancia a planta na posição do tile
                     GameObject newPlant = Instantiate(selectedPlantPrefab, tile.transform.position, Quaternion.identity);
                     
                     // Atualiza o estado do tile
-                    tile.hasPlant = true;
-                    tile.currentPlant = newPlant;
+                    tile.has_plant = true;
+                    tile.current_plant = newPlant;
                 }
+                */
             }
         }
     }
@@ -39,6 +44,15 @@ public class PlantManager : MonoBehaviour
     public void SelectPlant(GameObject plantPrefab)
     {
         selectedPlantPrefab = plantPrefab;
+    }
+
+    public void ReceiveDamage(int dano)
+    {
+        hp -= dano;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 
