@@ -104,6 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunValue: 25
   lifeTime: 15
+  maxY: -3
+  minY: 4
   stopFallingHeight: -2
   fallingGravityScale: 0.1
 --- !u!58 &8779135883198195658

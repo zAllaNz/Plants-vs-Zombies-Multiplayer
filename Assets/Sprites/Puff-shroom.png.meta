@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0230b9b075e08f14d9b3d23a53701903
+guid: 11bc48f0b79910147bcd8a12ffd9b9b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 605162050437240712
-    second: sun_0
+      213: 2790310811729404575
+    second: puff-shroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sun_0
+      name: puff-shroom_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 267
-        height: 276
+        x: 7
+        y: 6
+        width: 83
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 887dbd7bda7f56800800000000000000
-      internalID: 605162050437240712
+      spriteID: f92201a46ec29b620800000000000000
+      internalID: 2790310811729404575
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sun_0: 605162050437240712
+      puff-shroom_0: 2790310811729404575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

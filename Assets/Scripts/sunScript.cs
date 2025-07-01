@@ -4,7 +4,9 @@ public class sunScript : MonoBehaviour
 {
     public int sunValue = 25;
     public float lifeTime = 10.0f;
-    public float stopFallingHeight = -2.5f;
+    public float maxY = -3;
+    public float minY = 4;
+    public float stopFallingHeight;
     public float fallingGravityScale = 0.1f;
 
     private Rigidbody2D rb;
@@ -25,6 +27,7 @@ public class sunScript : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifeTime);
+        stopFallingHeight = Random.Range(minY, maxY);
     }
 
     public void Initialize(bool doFall)
