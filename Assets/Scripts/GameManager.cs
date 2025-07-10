@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject current_zombi;
     public GameObject current_plant;
     public Sprite current_plant_sprite;
     public Transform tiles;
@@ -10,22 +11,48 @@ public class GameManager : MonoBehaviour
     public int currentSun;
 
     public GameObject sunPrefab;
-    public float minX; // Posição X mínima para o spawn
-    public float maxX; // Posição X máxima para o spawn
-    public float spawnY; // Posição Y de onde os sóis vão cair
+    public float minX; // Posiï¿½ï¿½o X mï¿½nima para o spawn
+    public float maxX; // Posiï¿½ï¿½o X mï¿½xima para o spawn
+    public float spawnY; // Posiï¿½ï¿½o Y de onde os sï¿½is vï¿½o cair
     public float minSpawnInterval = 5.0f;
     public float maxSpawnInterval = 12.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Sprite current_zombie_sprite;
+
+    public Transform tiles;
+
+    public LayerMask tileMask;
+
+    public void comprar_zombie(GameObject zombie, Sprite sprite)
     {
+        current_zombi = zombie;
+        current_zombie_sprite = sprite;
         currentSun = 250;
         StartCoroutine(SpawnSunRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        RaycastHit2D hit = Physics2D.Raycast(
+            Camera.main.ScreenToWorldPoint(Input.mousePosition), 
+            Vector2.zero, 
+            Mathf.Infinity,
+            tileMask);
+
+        foreach (Transform tile in tiles)
+            tile.GetComponent<SpriteRenderer>().enabled = false;
+
+        if(hit.collider && current_zombi)
+        {
+            hit.collider.GetComponent<SpriteRenderer>().sprite = current_zombie_sprite;
+            hit.collider.GetComponent<SpriteRenderer>().enabled = true;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(current_zombi, hit.collider.transform.position, Quaternion.identity);
+                current_zombi = null;
+                current_zombie_sprite = null;
+            }
 
     }
 
@@ -61,5 +88,9 @@ public class GameManager : MonoBehaviour
         {
             sunScript.Initialize(doFall: true);
         }
+
+
+
+
     }
-}
+};
