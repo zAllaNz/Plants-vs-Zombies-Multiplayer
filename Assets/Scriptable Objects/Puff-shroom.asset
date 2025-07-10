@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3cef1acf50c284ba5912496b45ed24, type: 3}
+  m_Name: Puff-shroom
+  m_EditorClassIdentifier: 
+  plantName: Puff-shroom
+  plantPrefab: {fileID: 8945271956358584158, guid: 425477fc63878e141b59e33f848051fa, type: 3}
+  cardSprite: {fileID: 2790310811729404575, guid: 11bc48f0b79910147bcd8a12ffd9b9b6, type: 3}
+  sunCost: 0
