@@ -19,30 +19,26 @@ public class GameManager : MonoBehaviour
 
     public Sprite current_zombie_sprite;
 
-    public Transform tiles;
-
     public LayerMask tileMask;
 
-    public void comprar_zombie(GameObject zombie, Sprite sprite)
+
+    void Start()
     {
-        current_zombi = zombie;
-        current_zombie_sprite = sprite;
         currentSun = 250;
         StartCoroutine(SpawnSunRoutine());
     }
-
-    private void Update()
+    void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(
-            Camera.main.ScreenToWorldPoint(Input.mousePosition), 
-            Vector2.zero, 
+            Camera.main.ScreenToWorldPoint(Input.mousePosition),
+            Vector2.zero,
             Mathf.Infinity,
             tileMask);
 
         foreach (Transform tile in tiles)
             tile.GetComponent<SpriteRenderer>().enabled = false;
 
-        if(hit.collider && current_zombi)
+        if (hit.collider && current_zombi)
         {
             hit.collider.GetComponent<SpriteRenderer>().sprite = current_zombie_sprite;
             hit.collider.GetComponent<SpriteRenderer>().enabled = true;
@@ -54,6 +50,7 @@ public class GameManager : MonoBehaviour
                 current_zombie_sprite = null;
             }
 
+        }
     }
 
     public void AddSun(int sunValue)
@@ -88,9 +85,13 @@ public class GameManager : MonoBehaviour
         {
             sunScript.Initialize(doFall: true);
         }
-
-
-
-
     }
-};
+
+    public void comprar_zombie(GameObject zombie, Sprite sprite)
+    {
+        current_zombi = zombie;
+        current_zombie_sprite = sprite;
+        currentSun = 250;
+        StartCoroutine(SpawnSunRoutine());
+    }
+}

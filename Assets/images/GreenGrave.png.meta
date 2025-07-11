@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GreenGrave_0: 7053325310966533033
+      GreenGrave_1: -5818691928885859192
+      GreenGrave_2: 4578698874817894072
+      GreenGrave_3: -5283959980051566853
+      GreenGrave_4: 7177213973477965672
+      GreenGrave_5: -6256584264700269428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

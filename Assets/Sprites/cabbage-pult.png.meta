@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cabbage-pult_0: -7476331924436112343
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
