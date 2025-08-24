@@ -102,3 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 0.5
   saude: 1200
+  dano: 20
+  taxaAtaque: 1.5
+  alcanceAtaque: 0.1
+  camadaPlanta:
+    serializedVersion: 2
+    m_Bits: 512

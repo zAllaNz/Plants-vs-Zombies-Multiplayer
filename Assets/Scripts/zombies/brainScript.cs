@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class brainScript : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class brainScript : MonoBehaviour
             gameManager.Addbrains(BrainValor);
         }
 
+        Destroy(gameObject);
+    }
+
+    private void OnBecameInvisible()
+    {
         Destroy(gameObject);
     }
 }
