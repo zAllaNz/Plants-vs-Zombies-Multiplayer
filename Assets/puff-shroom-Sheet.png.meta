@@ -1,0 +1,1017 @@
+fileFormatVersion: 2
+guid: e203ad7b841695c438aa839a3ed0aaea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4687184554389578467
+    second: puff-shroom-Sheet_0
+  - first:
+      213: -1702717948680623226
+    second: puff-shroom-Sheet_1
+  - first:
+      213: -7601920539725769405
+    second: puff-shroom-Sheet_2
+  - first:
+      213: -7809392677194889802
+    second: puff-shroom-Sheet_3
+  - first:
+      213: -2591661668939251870
+    second: puff-shroom-Sheet_4
+  - first:
+      213: -7116978001724966560
+    second: puff-shroom-Sheet_5
+  - first:
+      213: 564453193269155201
+    second: puff-shroom-Sheet_6
+  - first:
+      213: 5492624205729389909
+    second: puff-shroom-Sheet_7
+  - first:
+      213: 6785696793111423433
+    second: puff-shroom-Sheet_8
+  - first:
+      213: -5720567138128540541
+    second: puff-shroom-Sheet_9
+  - first:
+      213: 1733249041829174664
+    second: puff-shroom-Sheet_10
+  - first:
+      213: -1482232861341951095
+    second: puff-shroom-Sheet_11
+  - first:
+      213: -4255946445021031113
+    second: puff-shroom-Sheet_12
+  - first:
+      213: 5561498144258827439
+    second: puff-shroom-Sheet_13
+  - first:
+      213: -4449089486790058575
+    second: puff-shroom-Sheet_14
+  - first:
+      213: -8129628208130365210
+    second: puff-shroom-Sheet_15
+  - first:
+      213: -2338451488313479845
+    second: puff-shroom-Sheet_16
+  - first:
+      213: -7511790184636520123
+    second: puff-shroom-Sheet_17
+  - first:
+      213: -495129698163704247
+    second: puff-shroom-Sheet_18
+  - first:
+      213: 6819015794186719261
+    second: puff-shroom-Sheet_19
+  - first:
+      213: 1312294310862703122
+    second: puff-shroom-Sheet_20
+  - first:
+      213: 253915082965362106
+    second: puff-shroom-Sheet_21
+  - first:
+      213: 4407498891768099393
+    second: puff-shroom-Sheet_22
+  - first:
+      213: -5406896608670959460
+    second: puff-shroom-Sheet_23
+  - first:
+      213: 3705948329217084270
+    second: puff-shroom-Sheet_24
+  - first:
+      213: 1642050893808849888
+    second: puff-shroom-Sheet_25
+  - first:
+      213: -1665784367377222793
+    second: puff-shroom-Sheet_26
+  - first:
+      213: -3998351070912658454
+    second: puff-shroom-Sheet_27
+  - first:
+      213: -7072627953107242629
+    second: puff-shroom-Sheet_28
+  - first:
+      213: -7580373138298124738
+    second: puff-shroom-Sheet_29
+  - first:
+      213: -1302102141580266031
+    second: puff-shroom-Sheet_30
+  - first:
+      213: -6408017906807661227
+    second: puff-shroom-Sheet_31
+  - first:
+      213: 2878081510890501831
+    second: puff-shroom-Sheet_32
+  - first:
+      213: -7038424663932007214
+    second: puff-shroom-Sheet_33
+  - first:
+      213: 1074694207793163683
+    second: puff-shroom-Sheet_34
+  - first:
+      213: 6048838457456060567
+    second: puff-shroom-Sheet_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2a619b4893c0140800000000000000
+      internalID: 4687184554389578467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ba53c0c0bbe58e0800000000000000
+      internalID: -1702717948680623226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 6
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34556eabb8d808690800000000000000
+      internalID: -7601920539725769405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 6
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5034c6cb67f9390800000000000000
+      internalID: -7809392677194889802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 6
+        width: 77
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f31ec7171980cd0800000000000000
+      internalID: -2591661668939251870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 6
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 069f9ecf63a6b3d90800000000000000
+      internalID: -7116978001724966560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 6
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185942d403755d700800000000000000
+      internalID: 564453193269155201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d563b2d98b93c40800000000000000
+      internalID: 5492624205729389909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9e9eaf743ab2e50800000000000000
+      internalID: 6785696793111423433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c431a2f767c90b0800000000000000
+      internalID: -5720567138128540541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d938502dcbd0810800000000000000
+      internalID: 1733249041829174664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 6
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b5d49d01d0e6be0800000000000000
+      internalID: -1482232861341951095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 6
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7355f69d147dfe4c0800000000000000
+      internalID: -4255946445021031113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 6
+        width: 89
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4aa8b98196e2d40800000000000000
+      internalID: 5561498144258827439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 6
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd14fd1fa8a142c0800000000000000
+      internalID: -4449089486790058575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 6
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8e462a732cd2f80800000000000000
+      internalID: -8129628208130365210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d6792d2c62c8fd0800000000000000
+      internalID: -2338451488313479845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549697150a2c0c790800000000000000
+      internalID: -7511790184636520123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94eb43fa922f029f0800000000000000
+      internalID: -495129698163704247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1017427cb202ae50800000000000000
+      internalID: 6819015794186719261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 6
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21accbf09b4363210800000000000000
+      internalID: 1312294310862703122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 6
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5a3433c66168300800000000000000
+      internalID: 253915082965362106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 6
+        width: 77
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142f3cfd3e49a2d30800000000000000
+      internalID: 4407498891768099393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 6
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9837ee6e28d6f4b0800000000000000
+      internalID: -5406896608670959460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 2408
+        y: 6
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bcfe6de5c2e6330800000000000000
+      internalID: 3705948329217084270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2507
+        y: 6
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3d694869cb9c610800000000000000
+      internalID: 1642050893808849888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773f41e81f1f1e8e0800000000000000
+      internalID: -1665784367377222793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2707
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3c2fa92e00388c0800000000000000
+      internalID: -3998351070912658454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 2807
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b717b8a595af8dd90800000000000000
+      internalID: -7072627953107242629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 6
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36c3d21bca1dc690800000000000000
+      internalID: -7580373138298124738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 6
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d535d540010eede0800000000000000
+      internalID: -1302102141580266031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 6
+        width: 89
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d13663aa52217a0800000000000000
+      internalID: -6408017906807661227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 6
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c67f3ba2eff0f720800000000000000
+      internalID: 2878081510890501831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 3306
+        y: 6
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc0cff2f0e725e90800000000000000
+      internalID: -7038424663932007214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 3407
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad6ea120b41aee00800000000000000
+      internalID: 1074694207793163683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puff-shroom-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 3507
+        y: 6
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798e368678ac1f350800000000000000
+      internalID: 6048838457456060567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
