@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 1dbe4ec30ce2b2244a3b42aba83a077a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5633527027576561978
+    second: potato-mine-Sheet_0
+  - first:
+      213: 3490112307760182502
+    second: potato-mine-Sheet_1
+  - first:
+      213: 5649242970921744039
+    second: potato-mine-Sheet_2
+  - first:
+      213: -4043250196441634289
+    second: potato-mine-Sheet_3
+  - first:
+      213: -1993275673973774661
+    second: potato-mine-Sheet_4
+  - first:
+      213: -8023259929058351464
+    second: potato-mine-Sheet_5
+  - first:
+      213: 5356606117220390526
+    second: potato-mine-Sheet_6
+  - first:
+      213: 8271736203765923474
+    second: potato-mine-Sheet_7
+  - first:
+      213: 7582914516201654635
+    second: potato-mine-Sheet_8
+  - first:
+      213: 6766187204716047806
+    second: potato-mine-Sheet_9
+  - first:
+      213: -6733828931033144064
+    second: potato-mine-Sheet_10
+  - first:
+      213: -8341126887833006773
+    second: potato-mine-Sheet_11
+  - first:
+      213: 4241868586620185159
+    second: potato-mine-Sheet_12
+  - first:
+      213: 4830161863589830536
+    second: potato-mine-Sheet_13
+  - first:
+      213: 4491567597158651930
+    second: potato-mine-Sheet_14
+  - first:
+      213: 8232427871134260751
+    second: potato-mine-Sheet_15
+  - first:
+      213: 8337362635008746590
+    second: potato-mine-Sheet_16
+  - first:
+      213: -8556010134052538539
+    second: potato-mine-Sheet_17
+  - first:
+      213: 2053038414767953927
+    second: potato-mine-Sheet_18
+  - first:
+      213: 1318226025994342807
+    second: potato-mine-Sheet_19
+  - first:
+      213: 21490738052037790
+    second: potato-mine-Sheet_20
+  - first:
+      213: -2660583752516419817
+    second: potato-mine-Sheet_21
+  - first:
+      213: 4120821721917403048
+    second: potato-mine-Sheet_22
+  - first:
+      213: 702248377807787323
+    second: potato-mine-Sheet_23
+  - first:
+      213: -7191789981212906672
+    second: potato-mine-Sheet_24
+  - first:
+      213: 4820324627196537874
+    second: potato-mine-Sheet_25
+  - first:
+      213: -6956331315210697615
+    second: potato-mine-Sheet_26
+  - first:
+      213: 1432714877401024818
+    second: potato-mine-Sheet_27
+  - first:
+      213: 6801260955399700323
+    second: potato-mine-Sheet_28
+  - first:
+      213: 4084900226808993340
+    second: potato-mine-Sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: potato-mine-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 37
+        width: 125
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31634fdbfe4e2e40800000000000000
+      internalID: 5633527027576561978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4b34a07ae5f6030800000000000000
+      internalID: 3490112307760182502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6b9a31d84266e40800000000000000
+      internalID: 5649242970921744039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a611f4e5d73e7c0800000000000000
+      internalID: -4043250196441634289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 37
+        width: 125
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6ad59d5567654e0800000000000000
+      internalID: -1993275673973774661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 37
+        width: 125
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896e9d38a97a7a090800000000000000
+      internalID: -8023259929058351464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 37
+        width: 125
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e761b9212ec765a40800000000000000
+      internalID: 5356606117220390526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29eb435704c1bc270800000000000000
+      internalID: 8271736203765923474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b694a54939ceb3960800000000000000
+      internalID: 7582914516201654635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebda4e4f96356ed50800000000000000
+      internalID: 6766187204716047806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 37
+        width: 125
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005658bb342ac82a0800000000000000
+      internalID: -6733828931033144064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d0148e94d5e3c80800000000000000
+      internalID: -8341126887833006773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a626151052eda30800000000000000
+      internalID: 4241868586620185159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f19e6af9e280340800000000000000
+      internalID: 4830161863589830536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 37
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18db49aee0455e30800000000000000
+      internalID: 4491567597158651930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 37
+        width: 125
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e9bf118857f3270800000000000000
+      internalID: 8232427871134260751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 37
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54af4fa42344b370800000000000000
+      internalID: 8337362635008746590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557f7216d12f24980800000000000000
+      internalID: -8556010134052538539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708997e8f8bdd7c10800000000000000
+      internalID: 2053038414767953927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791511d16974b4210800000000000000
+      internalID: 1318226025994342807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 37
+        width: 125
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c7d8f56b95c4000800000000000000
+      internalID: 21490738052037790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f35186c25b31bd0800000000000000
+      internalID: -2660583752516419817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3305
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afa995e589103930800000000000000
+      internalID: 4120821721917403048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 3455
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35d35fcd23eeb900800000000000000
+      internalID: 702248377807787323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3605
+        y: 37
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b6796ad11a13c90800000000000000
+      internalID: -7191789981212906672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 37
+        width: 125
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ced1295bb35e240800000000000000
+      internalID: 4820324627196537874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3905
+        y: 37
+        width: 125
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174c0f86685267f90800000000000000
+      internalID: -6956331315210697615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4055
+        y: 37
+        width: 125
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239c7e3179602e310800000000000000
+      internalID: 1432714877401024818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4205
+        y: 37
+        width: 125
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f3557edcee26e50800000000000000
+      internalID: 6801260955399700323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: potato-mine-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 4355
+        y: 37
+        width: 125
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36dcd11d1b70b830800000000000000
+      internalID: 4084900226808993340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      potato-mine-Sheet_0: 5633527027576561978
+      potato-mine-Sheet_1: 3490112307760182502
+      potato-mine-Sheet_10: -6733828931033144064
+      potato-mine-Sheet_11: -8341126887833006773
+      potato-mine-Sheet_12: 4241868586620185159
+      potato-mine-Sheet_13: 4830161863589830536
+      potato-mine-Sheet_14: 4491567597158651930
+      potato-mine-Sheet_15: 8232427871134260751
+      potato-mine-Sheet_16: 8337362635008746590
+      potato-mine-Sheet_17: -8556010134052538539
+      potato-mine-Sheet_18: 2053038414767953927
+      potato-mine-Sheet_19: 1318226025994342807
+      potato-mine-Sheet_2: 5649242970921744039
+      potato-mine-Sheet_20: 21490738052037790
+      potato-mine-Sheet_21: -2660583752516419817
+      potato-mine-Sheet_22: 4120821721917403048
+      potato-mine-Sheet_23: 702248377807787323
+      potato-mine-Sheet_24: -7191789981212906672
+      potato-mine-Sheet_25: 4820324627196537874
+      potato-mine-Sheet_26: -6956331315210697615
+      potato-mine-Sheet_27: 1432714877401024818
+      potato-mine-Sheet_28: 6801260955399700323
+      potato-mine-Sheet_29: 4084900226808993340
+      potato-mine-Sheet_3: -4043250196441634289
+      potato-mine-Sheet_4: -1993275673973774661
+      potato-mine-Sheet_5: -8023259929058351464
+      potato-mine-Sheet_6: 5356606117220390526
+      potato-mine-Sheet_7: 8271736203765923474
+      potato-mine-Sheet_8: 7582914516201654635
+      potato-mine-Sheet_9: 6766187204716047806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
