@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 900a6ee322dcab447a111057bea57926
+guid: 7ea8e3eae180ac444a7baaaf3860882f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5782521184205631276
-    second: zombie_0
+      213: 348349942051316183
+    second: Imagem cenario - Melhorada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 115
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_0
+      name: Imagem cenario - Melhorada_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 14
-        width: 89
-        height: 156
+        x: 0
+        y: 0
+        width: 2048
+        height: 870
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d0904dbe9b50cfa0800000000000000
-      internalID: -5782521184205631276
+      spriteID: 7d12f793d6695d400800000000000000
+      internalID: 348349942051316183
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      zombie_0: -5782521184205631276
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
