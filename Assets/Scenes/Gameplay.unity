@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &19436843
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -709,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &84372972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -794,24 +792,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29ee0dd7fa555644af561c425a640a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_zombi: {fileID: 0}
-  current_plant: {fileID: 0}
-  current_plant_sprite: {fileID: 0}
-  tiles: {fileID: 131144411}
-  tile_layer:
-    serializedVersion: 2
-    m_Bits: 64
+  brainsText: {fileID: 0}
   currentSun: 0
+  currentBrains: 0
+  tiles: {fileID: 131144411}
+  tileMask:
+    serializedVersion: 2
+    m_Bits: 0
   sunPrefab: {fileID: 6060488904329694444, guid: 62ee7bec8a993d042947c9fb9484a4fa, type: 3}
+  brainPrefab: {fileID: 6060488904329694444, guid: ccd27f0116655b24f9d84cbf9ccf7732, type: 3}
   minX: -8
   maxX: 8
   spawnY: 6
   minSpawnInterval: 3
   maxSpawnInterval: 6
-  current_zombie_sprite: {fileID: 0}
-  tileMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!4 &96526034
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,7 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!61 &139279844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1218,7 +1211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &166494138
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1366,7 +1358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &283098975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1514,7 +1505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &297969648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1662,7 +1652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &332087194
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1925,7 +1914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &405897133
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2073,7 +2061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &409205585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2221,7 +2208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &429709548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2369,7 +2355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &458091522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2517,7 +2502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &472970337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2665,7 +2649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &489460214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2813,7 +2796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &524208343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3099,7 +3081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &544472294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3247,7 +3228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &603345648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3395,7 +3375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &613280975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3543,7 +3522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &622570838
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3938,7 +3916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &804988416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4122,7 +4099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &870484797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4306,7 +4282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &934059282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4498,7 +4473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &999413899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4791,7 +4765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1024467850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4939,7 +4912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1063839045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5177,7 +5149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!61 &1091218373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5371,7 +5342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1155022377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5519,7 +5489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1161962051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5805,7 +5774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1227902850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6127,7 +6095,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1324758567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6488,7 +6455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1389709834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6636,7 +6602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1441491561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6784,7 +6749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1481361714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6932,7 +6896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1494638547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7116,7 +7079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1518004162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7356,7 +7318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!61 &1539251664
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7504,7 +7465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!61 &1546601494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7698,7 +7658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1564192049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7921,7 +7880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1611383559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8343,7 +8301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1689892009
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8627,7 +8584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1742776877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8701,7 +8657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1748466454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9035,7 +8991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1821792509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9319,7 +9274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &1896976108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9571,7 +9525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!61 &1951701482
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10157,7 +10110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &2103837839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10305,7 +10257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeb0665795396448dafe7cdc47452b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temzombie: 0
 --- !u!212 &2141682495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10371,8 +10322,5 @@ SceneRoots:
   - {fileID: 1748466457}
   - {fileID: 395247852}
   - {fileID: 131144411}
-<<<<<<< HEAD
   - {fileID: 96526034}
   - {fileID: 995816108}
-=======
->>>>>>> cd2896c02b81c8b69c748327d82e3eed58b12ade

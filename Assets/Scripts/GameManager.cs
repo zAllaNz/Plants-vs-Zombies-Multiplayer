@@ -28,12 +28,13 @@ public class GameManager : MonoBehaviour
         currentSun = 250;
         currentBrains = 1000; // Exemplo de valor inicial
         UpdateBrainsText();
-        //StartCoroutine(SpawnSunRoutine());
-        StartCoroutine(SpawnBrainRoutine());
+        StartCoroutine(SpawnSunRoutine());
+        //StartCoroutine(SpawnBrainRoutine());
     }
 
     void Update()
     {
+        /*
         GameObject prefabToPlace = ZombieManager.Instance.GetSelectedZombiePrefab();
 
         // Esconde todos os previews por padrão
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     // Método para gastar os cérebros
