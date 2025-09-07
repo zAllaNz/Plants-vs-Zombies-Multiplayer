@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Cactus
   plantPrefab: {fileID: 875792042235956117, guid: 13351d55cd84c214f83bbaa3074ad545, type: 3}
-  cardSprite: {fileID: 7679083508794041174, guid: b854bb064feb1eb479cd5c4f454a783d, type: 3}
+  cardSprite: {fileID: 7679083508794041174, guid: b26fe0d35df3d1844996ed1c911d8fc1, type: 3}
   sunCost: 125

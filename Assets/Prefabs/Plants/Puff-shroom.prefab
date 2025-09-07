@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8851959756346286193}
   - component: {fileID: 5204287623587645691}
+  - component: {fileID: 8817991756289999944}
   m_Layer: 0
   m_Name: Puff-shroom
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1898850121
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2790310811729404575, guid: 11bc48f0b79910147bcd8a12ffd9b9b6, type: 3}
+  m_Sprite: {fileID: 4687184554389578467, guid: e32a4f2f4cfc018488f1f7f5386317f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,3 +88,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8817991756289999944
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945271956358584158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d5ade500500db24a9fb8604df9e3c30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Cattail
   plantPrefab: {fileID: 3656401736908450092, guid: 67bb61ba8a1a0c340bfd04725beea2a9, type: 3}
-  cardSprite: {fileID: 4772746847378793337, guid: ee60ad6d997b9bf4fa629d3fbc1d8913, type: 3}
+  cardSprite: {fileID: 4772746847378793337, guid: 206e2d35a33bb064eb33b3534fedb05d, type: 3}
   sunCost: 225

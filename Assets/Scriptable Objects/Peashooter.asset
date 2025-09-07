@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Peashooter
   plantPrefab: {fileID: 7856524156705084239, guid: 4cff4fe21bf64da42af3a81d30386914, type: 3}
-  cardSprite: {fileID: -1260379074482062535, guid: 28f6094eb947a7d49aa5d1db4388e779, type: 3}
+  cardSprite: {fileID: -1260379074482062535, guid: a7bccf0337c42cb4a875c528736160a5, type: 3}
   sunCost: 100

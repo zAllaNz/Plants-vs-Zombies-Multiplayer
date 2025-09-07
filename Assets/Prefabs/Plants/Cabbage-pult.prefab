@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830947720460036741}
   - component: {fileID: 851225417734024444}
+  - component: {fileID: 4157841805560904298}
   m_Layer: 0
   m_Name: Cabbage-pult
   m_TagString: Untagged
@@ -76,14 +77,36 @@ SpriteRenderer:
   m_SortingLayerID: -1898850121
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7476331924436112343, guid: 026a3e03fce3d9a40a4bb24eccfc5833, type: 3}
+  m_Sprite: {fileID: -1084327169168888409, guid: 8a97174eb4b8d784180236fd8312619a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.17, y: 0.9}
+  m_Size: {x: 1.19, y: 0.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4157841805560904298
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886558144169789758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 585f7405796878e4a80a61e0a4dc661f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
