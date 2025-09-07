@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Sunflower
   plantPrefab: {fileID: 691912173867982592, guid: ddf6601d8a40d364bb3d669e8bc40793, type: 3}
-  cardSprite: {fileID: -256329436847572505, guid: c5631412cc495314d977282bfeb47ff4, type: 3}
+  cardSprite: {fileID: 7367808777163505026, guid: 0256998f95a92ff46958fbf61476a0df, type: 3}
   sunCost: 50
