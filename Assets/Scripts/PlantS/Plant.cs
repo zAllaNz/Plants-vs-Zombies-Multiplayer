@@ -19,7 +19,7 @@ public class Plant : MonoBehaviour
         }
     }
     // partes em que a planta morre ou desaparece 
-    private void Die() // morre
+    public void Die() // morre
     {
         Debug.Log("A planta morreu!");
         // O Adicionar uma animação de morte ou efeito de partículas aqui futuramente
@@ -45,11 +45,11 @@ public class Plant : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Verifica se o GameManager existe e se ele está no modo de mira
-        if (GameManager.instance != null && GameManager.instance.modoMiraBungeeAtivo)
+        // Verifica se o hab_bungee existe e se ele está no modo de mira
+        if (hab_bungee.instance != null && hab_bungee.instance.modoMiraBungeeAtivo)
         {
-            // Se sim, avisa ao GameManager que ESTA planta foi o alvo escolhido
-            GameManager.instance.ConfirmarAlvoBungee(this.gameObject);
+            // Se sim, avisa ao hab_bungee que ESTA planta foi o alvo escolhido
+            hab_bungee.instance.ConfirmarAlvoBungee(this.gameObject);
         }
     }
 }

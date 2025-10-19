@@ -1,15 +1,29 @@
 using System.Collections;
-using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 
 
 public class GameManager : MonoBehaviour
-   
+{
+    public static GameManager instance;
+    // método singleton 
+    void Awake()
+    {
+        // Configuração do Singleton
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            // Se outra instância já existe, destrói esta para garantir que só há uma
+            Debug.LogWarning("Múltiplas instâncias de GameManager detectadas! Destruindo a duplicada.");
+            Destroy(gameObject);
+        }
+    }
 
-
-{ 
-    public static GameManager instance;  
 
     public TextMeshProUGUI brainsText;
 
@@ -19,7 +33,10 @@ public class GameManager : MonoBehaviour
     public Transform tiles;
     public LayerMask tileMask;
 
-   
+    // vou testar algo
+    public List<GameObject> plantasEmCampo = new List<GameObject>();
+
+
     public GameObject sunPrefab;
     public GameObject brainPrefab;
     public float minX, maxX, spawnY;
@@ -40,12 +57,25 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnBrainRoutine());
     }
 
+
     // Método para gastar os cérebros
-    public void SpendBrains(int amount)
+    public bool SpendBrains(int amount)
     {
-        currentBrains -= amount;
-        UpdateBrainsText();
-        Debug.Log("GameManager: Gastou " + amount + " cérebros. Total agora: " + currentBrains);
+        // Verifica se tem cérebros suficientes
+        if (currentBrains >= amount)
+        {
+            // Se sim, true
+            currentBrains -= amount;
+            UpdateBrainsText();
+            Debug.Log("GameManager: Gastou " + amount + " cérebros. Total agora: " + currentBrains);
+            return true;
+        }
+        else
+        {
+            // Se não, False
+            Debug.Log("GameManager: Cérebros insuficientes. TENTOU gastar " + amount);
+            return false;
+        }
     }
 
     // Função para atualizar o texto na tela
@@ -122,6 +152,25 @@ public class GameManager : MonoBehaviour
         if (sunScript != null)
         {
             sunScript.Initialize(doFall: true);
+        }
+    }
+
+    // Método para adicionar uma planta à lista quando ela é criada
+    public void AdicionarPlantaNaLista(GameObject planta)
+    {
+        if (!plantasEmCampo.Contains(planta))
+        {
+            plantasEmCampo.Add(planta);
+            Debug.Log("GameManager: " + planta.name + " foi ADICIONADA à lista. Total: " + plantasEmCampo.Count);
+        }
+    }
+
+    public void RemoverPlantaDaLista(GameObject planta)
+    {
+        if (plantasEmCampo.Contains(planta))
+        {
+            plantasEmCampo.Remove(planta);
+            Debug.Log("GameManager: " + planta.name + " foi REMOVIDA da lista. Total: " + plantasEmCampo.Count);
         }
     }
 
