@@ -1,12 +1,18 @@
 
 using UnityEngine;
+using System.Collections;
 
 public class ZombieManager : MonoBehaviour
 {
     public static ZombieManager Instance;
 
     private ZombieData selectedZombieData;
-    private GameManager gameManager; 
+    private GameManager gameManager;
+    public GameObject zombiePreviewObject;
+
+// espaço pra colocas os zombies 
+    public LayerMask tileMask;
+    public Transform tiles;
 
     void Awake()
     {
@@ -38,6 +44,46 @@ public class ZombieManager : MonoBehaviour
             Debug.Log("ZombieManager: Cérebros insuficientes!");
             selectedZombieData = null;
         }
+    }
+
+
+    // sistemas de alocação de zombies 
+    void Update()
+    {
+        GameObject prefabToPlace = ZombieManager.Instance.GetSelectedZombiePrefab();
+
+        // esconde os previews por padrão 
+        foreach (Transform tile in tiles)
+            tile.GetComponent<SpriteRenderer>().enabled = false;
+
+        if (prefabToPlace != null)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
+
+            if (hit.collider)
+            {
+
+                // Pega o sprite para o preview do ZombieManager
+                Sprite previewSprite = ZombieManager.Instance.GetSelectedZombieSpriteForPreview();
+
+                // Mostra o preview
+                SpriteRenderer tileRenderer = hit.collider.GetComponent<SpriteRenderer>();
+                tileRenderer.sprite = previewSprite;
+                tileRenderer.enabled = true;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+
+                    Instantiate(prefabToPlace, hit.collider.transform.position, Quaternion.identity);
+                    ZombieManager.Instance.ZombieWasPlaced();
+
+                }
+
+            }
+
+
+        }
+
     }
 
     //  MÉTODO PARA OBTER O PREFAB 

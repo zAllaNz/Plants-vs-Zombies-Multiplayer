@@ -1,4 +1,4 @@
-// zombie.cs 
+
 using UnityEngine;
 
 public class zombie : MonoBehaviour
@@ -14,11 +14,11 @@ public class zombie : MonoBehaviour
     public LayerMask camadaPlanta; // A Layer em que as plantas estão
 
     // Variáveis internas
-    private float proximoAtaque;
-    private bool estaAtacando = false;
+    protected float proximoAtaque;
+    protected bool estaAtacando = false;
 
     // O método Update é chamado a cada frame
-    void Update()
+    protected virtual void Update()
     {
         // 1. Solta um raio invisível para frente para detectar plantas
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, alcanceAtaque, camadaPlanta);
@@ -45,13 +45,13 @@ public class zombie : MonoBehaviour
         }
     }
 
-    void Mover()
+    protected virtual void Mover()
     {
     
         transform.position += Vector3.left * velocidade * Time.deltaTime;
     }
 
-    void Atacar(GameObject planta)
+    public void Atacar(GameObject planta)
     {
         // Controla a velocidade de ataque usando um temporizador
         if (Time.time >= proximoAtaque)
@@ -70,7 +70,12 @@ public class zombie : MonoBehaviour
         }
     }
 
-    void Morrer()
+    public void tomarDano(int dano)
+    {
+        saude -= dano;
+    }
+
+    public void Morrer()
     {
         // Adicionar uma animação de morte, som, etc. futuramente 
         Destroy(gameObject);

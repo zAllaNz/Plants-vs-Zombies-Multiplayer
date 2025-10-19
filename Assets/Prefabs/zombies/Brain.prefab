@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8779135883198195658}
   - component: {fileID: 5120789594242388441}
   - component: {fileID: 1229456246563047959}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -166,3 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BrainValor: 50
+  lifetimeBrain: 12
+  minY: -3
+  maxY: 4
+  fallingGravityScale: 0.2
