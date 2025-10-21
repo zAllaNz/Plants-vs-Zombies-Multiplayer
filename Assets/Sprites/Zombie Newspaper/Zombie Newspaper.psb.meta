@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -619,7 +619,31 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -638,7 +662,49 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: a81d398509b674c42b1f51cc56d1073b
+    name: Newspaper 1
+    layerId: 39
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 73e2c441666f84340a06cb87432b6019
+    name: Newspaper 2
+    layerId: 40
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 5a040a2e70f9c5749acb9ff9f3b1e45f
+    name: Newspaper 3
+    layerId: 41
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: c8c526fd4260ce0408f14206d5913e03
+    name: Arms
+    layerId: 30
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 8fcefaf11512cfd4791b73fe91a8ed78
+    name: Glasses
+    layerId: 20
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 8aa550328fd7ffa46803438fbaeaf580
+    name: Pants 1
+    layerId: 23
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
+  - spriteId: 2fc22ac04d79eca4fb75626c03c6fc2b
+    name: Pants 2
+    layerId: 24
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
   psdLayers:
   - name: Arms
     spriteName: Arms
@@ -874,7 +940,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638965916671914908
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
