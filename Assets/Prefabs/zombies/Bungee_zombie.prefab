@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2687417535501214260}
   - component: {fileID: 4845333421894356293}
   - component: {fileID: 5247700005716319042}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Bungee_zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}

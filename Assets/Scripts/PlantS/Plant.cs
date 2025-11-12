@@ -34,7 +34,7 @@ public class Plant : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         if(GameManager.instance != null)
         {

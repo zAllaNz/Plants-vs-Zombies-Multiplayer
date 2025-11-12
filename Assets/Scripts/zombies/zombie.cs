@@ -70,7 +70,7 @@ public class zombie : MonoBehaviour
         }
     }
 
-    public void tomarDano(int dano)
+    public virtual void tomarDano(int dano)
     {
         saude -= dano;
     }

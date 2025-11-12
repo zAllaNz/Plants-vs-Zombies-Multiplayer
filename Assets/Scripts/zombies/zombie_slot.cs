@@ -1,73 +1,142 @@
-// zombie_slot.cs
-using TMPro; // Não se esqueça de incluir isso para usar TextMeshPro
+
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections; // Importante para Coroutines
 
 public class zombie_slot : MonoBehaviour
 {
     [Header("Dados do Zumbi")]
-    public ZombieData zombieData; // A única conexão com os dados do jogo
+    public ZombieData zombieData;
 
     [Header("Referências da UI")]
-    public Image backgroundImage;   // Para o objeto chamado "Background"
-    public Image iconImage;         // Para o objeto chamado "icon"
-    public TextMeshProUGUI priceText; // Para o objeto chamado "price"
+    public Image backgroundImage;
+    public Image iconImage;
+    public TextMeshProUGUI priceText;
 
-    // Awake é chamado antes do Start, ideal para configurar referências
+    // --- VARIÁVEIS DE COOLDOWN  ---
+    [Header("Controle de Cooldown")]
+    public float tempoDeCooldown = 8.0f; // Defina o tempo de recarga aqui
+    private bool estaEmCooldown = false;
+    private Slider sliderCooldown;
+    private Button botao; // Referência ao próprio botão
+   
+
     void Awake()
     {
-        // Garante que o botão chame a função OnButtonClick ao ser clicado
-        GetComponent<Button>().onClick.AddListener(OnButtonClick);
+        // Pega o botão neste objeto
+        botao = GetComponent<Button>();
+        botao.onClick.AddListener(OnButtonClick);
     }
 
-    // Start é chamado uma vez quando o jogo começa
     void Start()
     {
+       
+        // Procura o slider nos objetos filhos
+        sliderCooldown = GetComponentInChildren<Slider>(true); // 'true' inclui inativos
+        if (sliderCooldown != null)
+        {
+            sliderCooldown.maxValue = tempoDeCooldown;
+            sliderCooldown.value = 0;
+            sliderCooldown.gameObject.SetActive(false);
+        }
+        
+
         UpdateVisuals();
     }
 
-    // OnValidate é uma função mágica da Unity: é chamada no editor sempre que
-    // um valor é alterado no Inspector. Ótimo para ver as mudanças ao vivo!
     private void OnValidate()
     {
-        // É uma boa prática verificar se os componentes existem antes de usá-los no OnValidate
         if (iconImage == null) iconImage = GetComponentInChildren<Image>();
         if (priceText == null) priceText = GetComponentInChildren<TextMeshProUGUI>();
         UpdateVisuals();
     }
 
-    // Esta função atualiza a aparência do botão com base no ZombieData
     private void UpdateVisuals()
     {
+        
         if (zombieData != null)
         {
-            // Ativa os componentes visuais
             iconImage.enabled = true;
             priceText.enabled = true;
-
-            // Define o ícone e o preço
             iconImage.sprite = zombieData.icon;
             priceText.text = zombieData.brainCost.ToString();
         }
         else
         {
-            // Se nenhum ZombieData for fornecido, esconde tudo
             iconImage.enabled = false;
             priceText.enabled = false;
         }
     }
 
-    // Esta função é a lógica do jogo: o que acontece ao clicar
-
-
+    // Função chamada pelo clique do botão
     void OnButtonClick()
     {
-        // Adicione esta linha:
-        Debug.Log("Botão CLICADO COM SUCESSO! Tentando selecionar: " + zombieData.zombieName);
+      
+        // Checa se está em cooldown
+        if (estaEmCooldown)
+        {
+            Debug.Log("Botão ainda em cooldown.");
+            return;
+        }
 
+        // Checa se tem cérebros
+        if (GameManager.instance.currentBrains < zombieData.brainCost)
+        {
+            Debug.Log("Cérebros insuficientes!");
+            return;
+        }
+
+        // Se tudo estiver certo, seleciona o zumbi
+        // (O erro de argumento será corrigido no próximo script)
         if (zombieData != null)
         {
-            ZombieManager.Instance.SelectZombie(zombieData);
+            ZombieManager.Instance.SelectZombie(zombieData, this);
+        }
+        // --- FIM DA MUDANÇA ---
+    }
+
+  
+
+    // O ZombieManager vai chamar esta função
+    public void IniciarCooldown()
+    {
+        StartCoroutine(RotinaCooldown());
+    }
+
+    private IEnumerator RotinaCooldown()
+    {
+        estaEmCooldown = true;
+        botao.interactable = false; // Desativa o botão
+
+        float timer = tempoDeCooldown;
+
+        if (sliderCooldown != null)
+        {
+            sliderCooldown.maxValue = tempoDeCooldown;
+            sliderCooldown.value = tempoDeCooldown;
+            sliderCooldown.gameObject.SetActive(true);
+        }
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            if (sliderCooldown != null)
+            {
+                sliderCooldown.value = timer;
+            }
+            yield return null;
+        }
+
+        // Acabou o cooldown
+        estaEmCooldown = false;
+        botao.interactable = true; // Reativa o botão
+
+        if (sliderCooldown != null)
+        {
+            sliderCooldown.gameObject.SetActive(false);
         }
     }
 }
+ 
