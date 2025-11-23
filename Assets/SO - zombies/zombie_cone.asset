@@ -15,4 +15,4 @@ MonoBehaviour:
   zombieName: zombie_coneHead
   zombiePrefab: {fileID: 1354424122944836749, guid: 2c4b3719f01c5be44ba22601fd41cf80, type: 3}
   brainCost: 75
-  icon: {fileID: -1454757499792345550, guid: cd4db8079548625459fc23158a1dae27, type: 3}
+  icon: {fileID: -1797191863160789320, guid: 7d517fb0257b7924b83f1aef5c28991b, type: 3}

@@ -1,9 +1,18 @@
-// Tile.cs (versão para colocar ZUMBIS)
+
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
     private bool isOccupied = false;
+
+    // método para ver a variavél
+    public bool estaOcupado
+    {
+        get { return isOccupied; }
+    }
+
+ 
+
     private void OnMouseDown()
     {
         GameObject plantPrefab = PlantingManager.Instance.GetSelectedPlantPrefab();
@@ -23,29 +32,20 @@ public class Tile : MonoBehaviour
         {
             Debug.Log("Nenhuma planta selecionada para plantar.");
         }
+
+        // logica dos zombies (integrando com as plantas)
+
+       // GameObject zombiePrefab = ZombieManager.Instance.GetSelectedZombiePrefab();
+
+        //if (zombiePrefab != null)
+        //{
+          //  Instantiate(zombiePrefab, transform.position, Quaternion.identity);
+            //ZombieManager.Instance.ZombieWasPlaced();
+
+            //return;
+        //}
+
+    }
     }
 
-    /*private void OnMouseDown()
-    {
-        // Pega o prefab do ZombieManager
-        GameObject zombiePrefab = ZombieManager.Instance.GetSelectedZombiePrefab();
-
-        if (zombiePrefab != null && !isOccupied)
-        {
-            Instantiate(zombiePrefab, transform.position, Quaternion.identity);
-            isOccupied = true;
-
-            // Avisa o ZombieManager que o zumbi foi colocado
-            ZombieManager.Instance.ZombieWasPlaced();
-        }
-        else if (isOccupied)
-        {
-            Debug.Log("Este slot já está ocupado!");
-        }
-        else
-        {
-            Debug.Log("Nenhum zumbi selecionado para colocar.");
-        }
-    }
-    */
-}
+  

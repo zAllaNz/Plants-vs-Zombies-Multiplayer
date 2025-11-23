@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8028f8e7aaa18b6499ecdfd2617f9eaa, type: 3}
+  m_Name: zombi_jornal
+  m_EditorClassIdentifier: 
+  zombieName: 'zombie_do_jornal '
+  zombiePrefab: {fileID: 1354424122944836749, guid: c39c2f6605651744884b24d941cf3e4e, type: 3}
+  brainCost: 130
+  icon: {fileID: 5884808022218837828, guid: 4d6d81fe9e0f16947be3ca5a6567c356, type: 3}
