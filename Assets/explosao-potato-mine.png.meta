@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      explosao-potato-mine_0: 1566711332092443334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

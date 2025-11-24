@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zombie_balao_andando_0: -1596373313571793631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

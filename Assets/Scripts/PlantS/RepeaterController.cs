@@ -3,56 +3,47 @@ using UnityEngine;
 
 public class RepeaterController : MonoBehaviour
 {
-    [Header("Game Elements")]
-    public GameObject peaPrefab;
+    [Header("Configuração")]
+    public GameObject peaPrefab; // Use o mesmo prefab da Ervilha aqui
     public Transform shootingPoint;
     public LayerMask zombieLayer;
 
-    [Header("Shooting Stats")]
+    [Header("Atributos")]
     public float fireRate = 1.5f;
-    public float delayBetweenPeas = 0.2f;
+    public float delayBetweenPeas = 0.15f; // Tempo entre a 1ª e a 2ª ervilha
     public float detectionRange = 10f;
 
-    private bool hasTarget = false;
-    private bool isShooting = false;
+    private bool isShooting = false; // Para não interromper a rajada
 
     void Update()
     {
-        CheckForZombieInLane();
-
-        if (hasTarget && !isShooting)
+        // Só inicia uma nova rajada se detectar zumbi E não estiver atirando já
+        if (ZombieInLane() && !isShooting)
         {
-            StartCoroutine(ShootTwoPeas());
+            StartCoroutine(ShootBurst());
         }
     }
 
-    void CheckForZombieInLane()
+    bool ZombieInLane()
     {
         RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, Vector2.right, detectionRange, zombieLayer);
-
-        if (hit.collider != null)
-        {
-            hasTarget = true;
-        }
-        else
-        {
-            hasTarget = false;
-        }
+        return hit.collider != null;
     }
 
-    IEnumerator ShootTwoPeas()
+    IEnumerator ShootBurst()
     {
         isShooting = true;
 
-        // Primeiro tiro
+        // Tiro 1
         Instantiate(peaPrefab, shootingPoint.position, shootingPoint.rotation);
-
-        // Pequeno atraso
+        
+        // Espera um pouquinho
         yield return new WaitForSeconds(delayBetweenPeas);
 
-        // Segundo tiro
+        // Tiro 2
         Instantiate(peaPrefab, shootingPoint.position, shootingPoint.rotation);
 
+        // Espera o resto do tempo de recarga (fireRate menos o tempo que já gastou)
         yield return new WaitForSeconds(fireRate - delayBetweenPeas);
 
         isShooting = false;
@@ -60,9 +51,10 @@ public class RepeaterController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (shootingPoint == null) return;
-
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(shootingPoint.position, (Vector2)shootingPoint.position + Vector2.right * detectionRange);
+        if (shootingPoint != null)
+        {
+            Gizmos.color = Color.cyan; // Cor ciano para diferenciar
+            Gizmos.DrawLine(shootingPoint.position, shootingPoint.position + Vector3.right * detectionRange);
+        }
     }
 }

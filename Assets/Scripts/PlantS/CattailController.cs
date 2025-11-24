@@ -1,74 +1,69 @@
-using System.Collections;
 using UnityEngine;
 
 public class CattailController : MonoBehaviour
 {
-    [Header("Game Elements")]
+    [Header("Configuração")]
     public GameObject spikePrefab;
     public Transform shootingPoint;
 
-    [Header("Shooting Stats")]
+    [Header("Atributos")]
     public float fireRate = 1.0f;
 
+    private float nextFireTime = 0f;
     private Transform currentTarget;
+    private Animator animator;
 
     void Start()
     {
-        StartCoroutine(TargetAndShoot());
+        animator = GetComponent<Animator>();
     }
 
-    IEnumerator TargetAndShoot()
+    void Update()
     {
-        while (true)
+        // Encontra o alvo a cada frame (ou poderia otimizar para rodar menos vezes)
+        FindPriorityTarget();
+
+        if (currentTarget != null && Time.time >= nextFireTime)
         {
-            // Procura pelo alvo mais próximo
-            FindTarget();
-
-            // Se houver um alvo válido, atira
-            if (currentTarget != null)
-            {
-                Shoot();
-            }
-
-            // Espera para o próximo tiro
-            yield return new WaitForSeconds(fireRate);
+            if (animator != null) animator.SetTrigger("Attack");
+            Shoot();
+            nextFireTime = Time.time + fireRate;
         }
     }
 
-    void FindTarget()
+    void FindPriorityTarget()
     {
-        // Encontra TODOS os game objects com a tag "Zombie" na cena
+        // Encontra TODOS os objetos com a tag Zombie
         GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
+        
+        float minX = Mathf.Infinity;
+        Transform bestTarget = null;
 
-        Transform closestZombie = null;
-        float minX = float.MaxValue;
-
-        if (zombies.Length == 0)
+        foreach (GameObject z in zombies)
         {
-            currentTarget = null;
-            return;
-        }
-
-        // Itera por todos os zumbis encontrados para achar o que está mais à esquerda
-        foreach (GameObject zombie in zombies)
-        {
-            if (zombie.transform.position.x < minX)
+            // Verifica se tem o script de zumbi (para garantir que é um inimigo válido)
+            if (z.GetComponent<zombie>() != null)
             {
-                minX = zombie.transform.position.x;
-                closestZombie = zombie.transform;
+                // Procura o menor X (mais à esquerda = mais perigoso)
+                if (z.transform.position.x < minX)
+                {
+                    minX = z.transform.position.x;
+                    bestTarget = z.transform;
+                }
             }
         }
-
-        currentTarget = closestZombie;
+        currentTarget = bestTarget;
     }
 
     void Shoot()
     {
-
-        // Cria o projétil no ponto de tiro
-        GameObject spikeGO = Instantiate(spikePrefab, shootingPoint.position, Quaternion.identity);
-
-        // Pega o script do projétil e informa a ele qual é o alvo
-        spikeGO.GetComponent<CattailSpikeController>().SetTarget(currentTarget);
+        GameObject spike = Instantiate(spikePrefab, shootingPoint.position, Quaternion.identity);
+        
+        // Configura o alvo no projétil
+        CattailSpikeController spikeScript = spike.GetComponent<CattailSpikeController>();
+        if (spikeScript != null)
+        {
+            spikeScript.SetTarget(currentTarget);
+        }
     }
 }

@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class SquashController : MonoBehaviour
 {
-    private enum SquashState { Idle, Preparing, Jumping, Smashing }
-    private SquashState currentState;
-
-    [Header("Stats")]
-    public float detectionRadius = 2.0f;
-    public int damage = 100; 
-    public float jumpHeight = 4f; 
-    public float jumpDuration = 0.5f; 
+    [Header("Configuração")]
+    public float detectionRadius = 1.5f; // Raio curto (1 bloco)
+    public int damage = 500; // Instakill
     public LayerMask zombieLayer;
 
-    private Transform targetZombie;
-    private Vector3 startPosition;
-    private Vector3 targetPosition;
-    private bool hasTarget = false;
+    [Header("Pulo")]
+    public float jumpDuration = 0.5f; // Tempo que leva para cair no zumbi
+    public float jumpHeight = 2.0f;   // Altura visual do pulo
+
+    private bool isActing = false; // Para não ativar duas vezes
+    private Animator animator;
 
     void Start()
     {
-        currentState = SquashState.Idle;
-        startPosition = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (currentState == SquashState.Idle)
+        if (!isActing)
         {
             DetectZombie();
         }
@@ -35,75 +31,91 @@ public class SquashController : MonoBehaviour
 
     void DetectZombie()
     {
-        Collider2D[] zombiesInRange = Physics2D.OverlapCircleAll(transform.position, detectionRadius, zombieLayer);
+        Collider2D[] zombies = Physics2D.OverlapCircleAll(transform.position, detectionRadius, zombieLayer);
 
-        if (zombiesInRange.Length > 0)
+        // Pega o zumbi mais próximo
+        Transform target = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (var z in zombies)
         {
-            targetZombie = zombiesInRange.OrderBy(z => Vector2.Distance(transform.position, z.transform.position)).FirstOrDefault().transform;
-
-            if (targetZombie != null)
+            // Validação Universal de Zumbi
+            if (z.GetComponentInParent<zombie>() != null)
             {
-                hasTarget = true;
-                currentState = SquashState.Preparing;
-
-                StartCoroutine(JumpAndSmash());
+                float dist = Vector2.Distance(transform.position, z.transform.position);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    target = z.transform;
+                }
             }
+        }
+
+        if (target != null)
+        {
+            StartCoroutine(JumpAndSmash(target));
         }
     }
 
-    IEnumerator JumpAndSmash()
+    IEnumerator JumpAndSmash(Transform targetZombie)
     {
+        isActing = true;
+        
+        // 1. Inicia Animação de Pulo
+        if (animator) animator.SetTrigger("Jump");
 
-        currentState = SquashState.Jumping;
-        targetPosition = new Vector3(targetZombie.position.x, startPosition.y, startPosition.z); // Pega a posição X do zumbi, mas mantém a altura Y do chão
+        Vector3 startPos = transform.position;
+        // Pega a posição X do zumbi, mas mantém o Y do chão (assumindo que o zumbi está no chão)
+        Vector3 endPos = new Vector3(targetZombie.position.x, startPos.y, startPos.z);
 
-        float elapsedTime = 0;
+        float elapsed = 0;
 
-        while (elapsedTime < jumpDuration)
+        // 2. Move o Squash em arco (Parábola) até o alvo
+        while (elapsed < jumpDuration)
         {
-            elapsedTime += Time.deltaTime;
-            float progress = elapsedTime / jumpDuration;
+            elapsed += Time.deltaTime;
+            float t = elapsed / jumpDuration;
 
-            Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, progress);
-
-            currentPos.y += jumpHeight * Mathf.Sin(progress * Mathf.PI);
+            // Interpolação Linear para mover para o lado
+            Vector3 currentPos = Vector3.Lerp(startPos, endPos, t);
+            
+            // Adiciona altura (Seno) para fazer o arco
+            currentPos.y += Mathf.Sin(t * Mathf.PI) * jumpHeight;
 
             transform.position = currentPos;
             yield return null;
         }
 
-        transform.position = targetPosition;
+        // Garante que chegou no chão
+        transform.position = endPos;
 
+        // 3. Causa Dano e Toca Animação de Impacto
         Smash();
     }
 
     void Smash()
     {
-        currentState = SquashState.Smashing;
+        if (animator) animator.SetTrigger("Smash");
 
-        Collider2D[] zombiesToSmash = Physics2D.OverlapBoxAll(transform.position, new Vector2(1, 2), 0, zombieLayer);
-
-        foreach (var zombieCollider in zombiesToSmash)
+        // Área de dano no ponto de impacto
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 1.0f, zombieLayer);
+        
+        foreach (var enemy in enemies)
         {
-            //ZombieHealth health = zombieCollider.GetComponent<ZombieHealth>();
-            //if (health != null)
+            zombie scriptZumbi = enemy.GetComponentInParent<zombie>();
+            if (scriptZumbi != null)
             {
-            //    health.TakeDamage(damage);
+                scriptZumbi.tomarDano(damage);
             }
         }
 
-        Destroy(gameObject, 0.2f);
+        // Destroi após o fim da animação de smash (aprox 0.5s)
+        Destroy(gameObject, 0.5f);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
-
-        if(currentState == SquashState.Smashing)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(transform.position, new Vector2(1, 2));
-        }
     }
 }

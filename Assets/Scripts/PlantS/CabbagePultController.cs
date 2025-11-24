@@ -2,61 +2,70 @@ using UnityEngine;
 
 public class CabbagePultController : MonoBehaviour
 {
-    [Header("Game Elements")]
+    [Header("Configuração")]
     public GameObject cabbageProjectilePrefab;
     public Transform shootingPoint;
-    public LayerMask zombieLayer;
+    public LayerMask zombieLayer; // Selecione a layer onde estão os zumbis
 
-    [Header("Shooting Stats")]
+    [Header("Atributos")]
     public float fireRate = 2.0f;
-    public float detectionRange = 10f;
+    public float detectionRange = 10f; 
 
-    private bool hasTarget = false;
-    private GameObject currentTargetZombie;
     private float nextFireTime = 0f;
+    private Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        CheckForZombieInLane();
+        // Detecta zumbi na linha
+        GameObject alvo = CheckForZombieInLane();
 
-        if (hasTarget && Time.time >= nextFireTime)
+        if (alvo != null && Time.time >= nextFireTime)
         {
-            Shoot();
+            // Toca a animação
+            if(animator != null) animator.SetTrigger("Attack");
+            
+            // Atira (passando o alvo)
+            Shoot(alvo);
+            
             nextFireTime = Time.time + fireRate;
         }
     }
 
-    void CheckForZombieInLane()
+    GameObject CheckForZombieInLane()
     {
+        // Raio para direita
         RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, Vector2.right, detectionRange, zombieLayer);
-
+        
         if (hit.collider != null)
         {
-            hasTarget = true;
-            currentTargetZombie = hit.collider.gameObject;
+            return hit.collider.gameObject; // Retorna o zumbi encontrado
         }
-        else
-        {
-            hasTarget = false;
-            currentTargetZombie = null;
-        }
+        return null;
     }
 
-    void Shoot()
+    void Shoot(GameObject targetZombie)
     {
-        if (currentTargetZombie == null) return;
-
-        // Inserir animação de arremesso aqui
-
-        GameObject cabbageGO = Instantiate(cabbageProjectilePrefab, shootingPoint.position, Quaternion.identity);
-
-        cabbageGO.GetComponent<CabbageProjectile>().Initialize(shootingPoint.position, currentTargetZombie);
+        GameObject projectile = Instantiate(cabbageProjectilePrefab, shootingPoint.position, Quaternion.identity);
+        
+        // Inicializa o projétil passando o alvo para ele calcular o arco
+        CabbageProjectile scriptProj = projectile.GetComponent<CabbageProjectile>();
+        if(scriptProj != null)
+        {
+            scriptProj.Initialize(shootingPoint.position, targetZombie);
+        }
     }
 
     private void OnDrawGizmos()
     {
-        if (shootingPoint == null) return;
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(shootingPoint.position, (Vector2)shootingPoint.position + Vector2.right * detectionRange);
+        if (shootingPoint != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(shootingPoint.position, shootingPoint.position + Vector3.right * detectionRange);
+        }
     }
 }
