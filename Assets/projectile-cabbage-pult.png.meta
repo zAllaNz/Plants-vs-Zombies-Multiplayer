@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      projectile-cabbage-pult_0: -7811325909572896531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

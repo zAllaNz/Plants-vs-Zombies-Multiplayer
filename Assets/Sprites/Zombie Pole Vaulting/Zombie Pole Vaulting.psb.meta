@@ -1051,211 +1051,6 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 65, y: 4}
     spritePosition: {x: 112, y: 166}
-  - name: Outer Arm Bone
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 95
-      y: 72
-      width: 10
-      height: 25
-    spriteID: 06903561bc78aa54792fd852c1c99f50
-    spriteBone:
-    - name: bone_2
-      guid: 71017a4a6240cef4ca5f85c98cc14018
-      position: {x: -8.092667, y: 14.331757, z: 0}
-      rotation: {x: 0, y: 0, z: 0.71878654, w: 0.69523096}
-      length: 15.704497
-      parentId: -1
-      color:
-        serializedVersion: 2
-        rgba: 4278255615
-    - name: bone_5
-      guid: 019336b5899e3484ea6149e3eadef796
-      position: {x: 8.586969, y: -13.437121, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9999999, w: 0.00048804464}
-      length: 23.554296
-      parentId: 0
-      color:
-        serializedVersion: 2
-        rgba: 4294901760
-    spriteOutline: []
-    vertices:
-    - position: {x: 9.999001, y: 5}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 9.999001, y: 6}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 9.999001, y: 10.35}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 9.979, y: 15.348}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 9.796, y: 20.328}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 9.045, y: 24.954}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 4.264, y: 24.383}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.052999977, y: 22.038}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 0
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.012000084, y: 17.064}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.001999855, y: 12.065}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.0009999275, y: 7.066}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0.0009999275, y: 2.0649996}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 0, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 5, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    - position: {x: 10, y: 0}
-      boneWeight:
-        weight0: 1
-        weight1: 0
-        weight2: 0
-        weight3: 0
-        boneIndex0: 1
-        boneIndex1: 0
-        boneIndex2: 0
-        boneIndex3: 0
-    spritePhysicsOutline: []
-    indices: 000000000a00000001000000000000000d0000000a000000000000000e0000000d000000010000000a00000002000000020000000900000003000000020000000a000000090000000300000008000000040000000300000009000000080000000400000006000000050000000400000008000000060000000600000008000000070000000a0000000d0000000b0000000b0000000d0000000c000000
-    edges:
-    - {x: 0, y: 1}
-    - {x: 0, y: 14}
-    - {x: 1, y: 2}
-    - {x: 2, y: 3}
-    - {x: 3, y: 4}
-    - {x: 4, y: 5}
-    - {x: 5, y: 6}
-    - {x: 6, y: 7}
-    - {x: 7, y: 8}
-    - {x: 8, y: 9}
-    - {x: 9, y: 10}
-    - {x: 10, y: 11}
-    - {x: 11, y: 12}
-    - {x: 12, y: 13}
-    - {x: 13, y: 14}
-    tessellationDetail: 0
-    uvTransform: {x: 95, y: 72}
-    spritePosition: {x: 167, y: 138}
   - name: Outer Arm 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1264,7 +1059,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 113
+      x: 95
       y: 72
       width: 10
       height: 25
@@ -1448,7 +1243,7 @@ ScriptedImporter:
     - {x: 11, y: 12}
     - {x: 12, y: 13}
     tessellationDetail: 0
-    uvTransform: {x: 113, y: 72}
+    uvTransform: {x: 95, y: 72}
     spritePosition: {x: 167, y: 138}
   - name: Outer Arm 2
     originalName: 
@@ -6189,7 +5984,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -6228,7 +6023,13 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 06903561bc78aa54792fd852c1c99f50
+    name: Outer Arm Bone
+    layerId: 11
+    flatten: 0
+    isGroup: 0
+    importLayer: 0
   psdLayers:
   - name: Hair
     spriteName: Hair
@@ -6268,7 +6069,7 @@ ScriptedImporter:
     layerID: 11
     mosaicPosition: {x: 95, y: 72}
     flatten: 0
-    isImported: 1
+    isImported: 0
     isVisible: 1
   - name: Outer Arm 1
     spriteName: Outer Arm 1
@@ -6276,7 +6077,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 221a2d65cee2f804ab94ca000c169a31
     layerID: 10
-    mosaicPosition: {x: 113, y: 72}
+    mosaicPosition: {x: 95, y: 72}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -6454,7 +6255,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638965936370002843
+  platformSettingsDirtyTick: 638995218022006516
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
