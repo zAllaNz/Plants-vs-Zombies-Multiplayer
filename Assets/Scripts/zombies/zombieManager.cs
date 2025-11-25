@@ -44,38 +44,52 @@ public class ZombieManager : MonoBehaviour
 
     void Update()
     {
-        // esconde os previews por padrão
         foreach (Transform tile in tiles)
-            tile.GetComponent<SpriteRenderer>().enabled = false;
+        {
+            SpriteRenderer sr = tile.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.enabled = false;
+            }
+        }
 
-        // Se temos um zumbi selecionado (carregando no mouse)
         if (selectedZombieData != null)
         {
+            // lança o raio 
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
-
-            if (hit.collider)
+            if (hit.collider != null)
             {
-                // Pega o sprite para o preview (precisamos do prefab)
-                Sprite previewSprite = selectedZombieData.icon; // Usando a função do ZombieData
-
-                // Mostra o preview
-                SpriteRenderer tileRenderer = hit.collider.GetComponent<SpriteRenderer>();
-                tileRenderer.sprite = previewSprite;
-                tileRenderer.enabled = true;
-
-                // Se o jogador clicou no tile
-                if (Input.GetMouseButtonDown(0))
+                // Se o mouse estiver em cima de um zumbi (que não tem a tag Tile), ele ignora.
+                if (hit.collider.CompareTag("Tile"))
                 {
-                    Instantiate(selectedZombieData.zombiePrefab, hit.collider.transform.position, Quaternion.identity);
-                    ZombieWasPlaced(); // Confirma o spawn
+                    // Pega o sprite do preview
+                    Sprite previewSprite = selectedZombieData.icon;
+
+                    // Pega o renderizador do CHÃO (Tile)
+                    SpriteRenderer tileRenderer = hit.collider.GetComponent<SpriteRenderer>();
+
+                    if (tileRenderer != null)
+                    {
+                        tileRenderer.sprite = previewSprite;
+                        tileRenderer.enabled = true; // Mostra o preview
+                    }
+
+                    // Se clicar, planta o zumbi
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Instantiate(selectedZombieData.zombiePrefab, hit.collider.transform.position, Quaternion.identity);
+                        ZombieWasPlaced();
+                    }
                 }
+
             }
 
-            // Permite cancelar a seleção com o botão direito
             if (Input.GetMouseButtonDown(1))
             {
                 DeselectZombie();
             }
+
+
         }
     }
 
