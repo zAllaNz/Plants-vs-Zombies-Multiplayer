@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cba5e97f1ebc8e84588e6550307b9af8
+guid: ec5deaed29465dc47bedb8f3084d7220
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1321382931492714033
-    second: Modificar cenarios  plants vs zombies _0
+      213: -2249186651660276819
+    second: cactus_portrait_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Modificar cenarios  plants vs zombies _0
+      name: cactus_portrait_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1400
-        height: 600
+        width: 108
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc9cc1c893189ade0800000000000000
-      internalID: -1321382931492714033
+      spriteID: dab2d3238a849c0e0800000000000000
+      internalID: -2249186651660276819
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Modificar cenarios  plants vs zombies _0: -1321382931492714033
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

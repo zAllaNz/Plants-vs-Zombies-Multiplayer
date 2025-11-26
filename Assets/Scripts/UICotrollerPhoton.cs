@@ -4,15 +4,26 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections;
 
 public class UIControllerPhoton : MonoBehaviourPunCallbacks
 {
     [Header("Telas")]
     public GameObject telaLogin;
     public GameObject telaLobby;
-    public GameObject telaSala;
     public GameObject telaCarregamento;
+    public GameObject telaPreSala;
+    public GameObject telaDeckPlanta;
+    public GameObject telaDeckZombie;
+    public MatchmakingController matchmakingController;
 
+    [Header("Status Players (para Matchmaking)")]
+    public TMP_Text matchmakingPlayer1Text; 
+    public TMP_Text matchmakingPlayer2Text;
+
+    [Header("Animação de Carregamento")]
+    public Animator loadingFlowerAnimator;
+    
     [Header("Campos de Login")]
     public TMP_InputField ipInputField;
     public Button loginButton;
@@ -21,7 +32,6 @@ public class UIControllerPhoton : MonoBehaviourPunCallbacks
     public Button[] roomButtons;
     public Color corSalaDisponivel = Color.white;
     public Color corSalaCheia = Color.red;
-
     private const int maxPlayersPerRoom = 2;
     private readonly string[] roomNames = { "Sala1", "Sala2", "Sala3", "Sala4", "Sala5" };
     private List<RoomInfo> listaSalasPhoton = new List<RoomInfo>();
@@ -44,19 +54,51 @@ public class UIControllerPhoton : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.ConnectUsingSettings();
         }
+        if (loadingFlowerAnimator == null)
+        {
+        Debug.LogWarning("Animator da flor de carregamento não está atribuído!");
+        }
     }
 
-    private void AtivarTela(GameObject telaParaAtivar)
+    public void AtivarTela(GameObject telaParaAtivar)
     {
         telaLogin.SetActive(telaParaAtivar == telaLogin);
         telaLobby.SetActive(telaParaAtivar == telaLobby);
-        telaSala.SetActive(telaParaAtivar == telaSala);
+        telaPreSala.SetActive(telaParaAtivar == telaPreSala);
         telaCarregamento.SetActive(telaParaAtivar == telaCarregamento);
+        telaDeckPlanta.SetActive(telaParaAtivar == telaDeckPlanta);
+        telaDeckZombie.SetActive(telaParaAtivar == telaDeckZombie);
+         if (telaParaAtivar == telaCarregamento && loadingFlowerAnimator != null)
+        {
+        loadingFlowerAnimator.Play("TelaCarregamento"); // Substitua pelo nome real da sua animação
+        Debug.Log("Iniciando animação de carregamento");
+        }
+        if (matchmakingController != null)
+        {
+            bool ativarMatchmaking = (
+                telaParaAtivar == telaPreSala ||
+                telaParaAtivar == telaDeckPlanta ||
+                telaParaAtivar == telaDeckZombie ||
+                telaParaAtivar == telaCarregamento
+                );
+            matchmakingController.gameObject.SetActive(ativarMatchmaking);
+        }
     }
 
     private void TentarEntrarNoLobby()
     {
+        // Define o Nickname
+        if (!string.IsNullOrEmpty(ipInputField.text))
+        {
+            PhotonNetwork.NickName = ipInputField.text;
+        }
+        else
+        {
+            PhotonNetwork.NickName = "Player" + Random.Range(1000, 9999);
+        }
+
         tentativaDeLogin = true;
+        Debug.Log("Tentando entrar no lobby, ativando tela de carregamento");
         AtivarTela(telaCarregamento);
         if (PhotonNetwork.IsConnectedAndReady)
         {
@@ -72,12 +114,10 @@ public class UIControllerPhoton : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         if (tentativaDeLogin)
-        {
+        { 
             AtivarTela(telaLobby);
         }
     }
-
-    // O callback mais importante para a sua necessidade!
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         listaSalasPhoton = roomList;
@@ -136,9 +176,54 @@ public class UIControllerPhoton : MonoBehaviourPunCallbacks
     {
         Debug.Log("Entrou na sala " + PhotonNetwork.CurrentRoom.Name);
         tentativaDeLogin = false;
-        AtivarTela(telaSala);
+
+        if (matchmakingController != null)
+        {
+            //Antes de qualquer coisa: garantir que o MatchmakingController tenha os textos da UI
+            if (matchmakingPlayer1Text != null)
+                matchmakingController.player1StatusText = matchmakingPlayer1Text;
+
+            if (matchmakingPlayer2Text != null)
+                matchmakingController.player2StatusText = matchmakingPlayer2Text;
+
+            //Atualiza/Carrega propriedades da sala
+            matchmakingController.SetupRoomPropertiesOnJoin();
+
+            //Se for o Jogador 1 (Master Client)
+            if (PhotonNetwork.IsMasterClient)
+            {
+                // Vai para a pré-sala para configurar a partida
+                AtivarTela(telaPreSala);
+                matchmakingController.InitializePreRoomConfiguration(this);
+            }
+            else
+            {
+                //Jogador 2 começa na tela de carregamento
+                AtivarTela(telaCarregamento);
+                // Aguarda 0.2s e só então verifica o deck
+                StartCoroutine(DelayCheckForDeck());
+            }
+        }
     }
 
+    
+    // Controla a navegação para a tela de Deck
+    public void GoToDeckScreen(string team)
+    {
+        if (team == "Planta")
+        {
+            AtivarTela(telaDeckPlanta);
+        }
+        else if (team == "Zumbi")
+        {
+            AtivarTela(telaDeckZombie);
+        }
+    }    
+    public void GoToLoadingScreen()
+    {
+        AtivarTela(telaCarregamento);
+    }
+    
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.LogWarning("Falha ao entrar na sala: " + message);
@@ -152,5 +237,11 @@ public class UIControllerPhoton : MonoBehaviourPunCallbacks
         AtivarTela(telaLogin);
         loginButton.interactable = false;
         PhotonNetwork.ConnectUsingSettings();
+    }
+
+    private IEnumerator DelayCheckForDeck()
+    {
+        yield return new WaitForSeconds(0.2f);
+        matchmakingController.CheckAndMovePlayer2ToDeck();
     }
 }
