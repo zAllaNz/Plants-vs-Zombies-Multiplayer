@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentSun = 250;
-        currentBrains = 1000; // Exemplo de valor inicial
+        currentBrains = 300; // Exemplo de valor inicial
         UpdateBrainsText();
         //StartCoroutine(SpawnSunRoutine());
         StartCoroutine(SpawnBrainRoutine());
