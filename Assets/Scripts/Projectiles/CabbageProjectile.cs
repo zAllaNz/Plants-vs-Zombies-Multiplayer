@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class CabbageProjectile : MonoBehaviour
 {
-    public float travelDuration = 0.8f;
-    public float arcHeight = 3f;        
-    public int damage = 2;              
+    public float travelDuration = 1.0f;
+    public float arcHeight = 2.5f;
+    public int damage = 20;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
     private float startTime;
-    private GameObject targetZombie;
+    private GameObject targetZombie; 
 
     public void Initialize(Vector3 startPos, GameObject target)
     {
         startPosition = startPos;
         targetZombie = target;
-
         transform.position = startPosition;
         startTime = Time.time;
     }
@@ -24,47 +23,36 @@ public class CabbageProjectile : MonoBehaviour
     {
         if (targetZombie == null)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
             return;
         }
 
         targetPosition = targetZombie.transform.position;
-
         float t = (Time.time - startTime) / travelDuration;
-
         Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, t);
-
-        float arc = arcHeight * (Mathf.Sin(t * Mathf.PI));
-
+        float arc = arcHeight * Mathf.Sin(t * Mathf.PI);
         currentPos.y += arc;
-
         transform.position = currentPos;
 
         if (t >= 1f)
         {
-            if (targetZombie != null)
-            {
-                //ZombieHealth zombieHealth = targetZombie.GetComponent<ZombieHealth>();
-                //if (zombieHealth != null)
-                {
-                //    zombieHealth.TakeDamage(damage);
-                }
-            }
-            Destroy(gameObject);
+            HitZombie();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void HitZombie()
     {
-        if (collision.CompareTag("Zombie") && collision.gameObject == targetZombie)
+        // Se o alvo ainda existe
+        if (targetZombie != null)
         {
-            //ZombieHealth zombieHealth = collision.GetComponent<ZombieHealth>();
-            //if (zombieHealth != null)
+            // Busca o script no alvo
+            zombie scriptZumbi = targetZombie.GetComponent<zombie>();
+            
+            if (scriptZumbi != null)
             {
-            //    zombieHealth.TakeDamage(damage);
+                scriptZumbi.tomarDano(damage);
             }
-            Destroy(gameObject);
         }
-        
+        Destroy(gameObject);
     }
 }

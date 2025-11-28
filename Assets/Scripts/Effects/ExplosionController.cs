@@ -2,39 +2,28 @@ using UnityEngine;
 
 public class ExplosionController : MonoBehaviour
 {
-    public int damage = 50;
-    public float explosionRadius = 1.5f;
-    public float lifespan = 0.5f;
+    public int damage = 1800; // Dano massivo
+    public float areaSize = 1.5f; 
 
     void Start()
     {
-        DealAreaDamage();
-
-        Destroy(gameObject, lifespan);
+        // Causa dano imediatamente ao nascer
+        Boom();
+        
+        // Some depois de 1 segundo
+        Destroy(gameObject, 1.0f); 
     }
 
-    void DealAreaDamage()
+    void Boom()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-
-        foreach (Collider2D hit in colliders)
+        Collider2D[] zombies = Physics2D.OverlapCircleAll(transform.position, areaSize);
+        foreach (var z in zombies)
         {
-            // Se o objeto atingido tiver a tag "Zombie"...
-            if (hit.CompareTag("Zombie"))
+            zombie script = z.GetComponentInParent<zombie>();
+            if (script != null)
             {
-                //ZombieHealth zombieHealth = hit.GetComponent<ZombieHealth>();
-                //if (zombieHealth != null)
-                {
-                    // Causa dano massivo
-                //    zombieHealth.TakeDamage(damage);
-                }
+                script.tomarDano(damage);
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

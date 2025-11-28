@@ -3,7 +3,7 @@ using UnityEngine;
 public class PeaController : MonoBehaviour
 {
     public float speed = 8f;
-    public int damage = 1;
+    public int damage = 20;
 
     void Update()
     {
@@ -12,15 +12,17 @@ public class PeaController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Zombie"))
+        // MUDANÇA: Não verificamos mais a Tag primeiro.
+        // Tentamos pegar o script 'zombie' diretamente no objeto ou nos pais dele.
+        zombie scriptZumbi = collision.GetComponentInParent<zombie>();
+
+        // Se encontrou o script, significa que É um zumbi válido
+        if (scriptZumbi != null)
         {
-            //ZombieHealth zombieHealth = collision.GetComponent<ZombieHealth>();
-            //if (zombieHealth != null)
-            {
-            //    zombieHealth.TakeDamage(damage);
-            }
-            Destroy(gameObject);
+            scriptZumbi.tomarDano(damage);
+            Destroy(gameObject); // Destrói a ervilha
         }
+        // Se bateu em algo que NÃO tem o script zombie (ex: outra planta), apenas ignora e passa reto.
     }
 
     private void OnBecameInvisible()
