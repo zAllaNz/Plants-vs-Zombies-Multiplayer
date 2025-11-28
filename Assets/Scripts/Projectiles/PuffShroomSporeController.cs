@@ -1,0 +1,37 @@
+using UnityEngine;
+
+public class PuffShroomSporeController : MonoBehaviour
+{
+    public float speed = 8f;
+    public int damage = 20;
+    public float maxDistance = 4.0f; 
+
+    private Vector3 startPosition;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    void Update()
+    {
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+
+        if (Vector3.Distance(startPosition, transform.position) >= maxDistance)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Busca o script zombie de forma universal (funciona para jornal, balão, cópias, etc)
+        zombie scriptZumbi = collision.GetComponentInParent<zombie>();
+
+        if (scriptZumbi != null)
+        {
+            scriptZumbi.tomarDano(damage);
+            Destroy(gameObject); 
+        }
+    }
+}

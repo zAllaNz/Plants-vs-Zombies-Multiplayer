@@ -45,5 +45,8 @@ TagManager:
   - name: NPC
     uniqueID: 2396117175
     locked: 0
+  - name: plants
+    uniqueID: 2709195219
+    locked: 0
   m_RenderingLayers:
   - Default

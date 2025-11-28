@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jornal_1_0: -1336038600814663481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
