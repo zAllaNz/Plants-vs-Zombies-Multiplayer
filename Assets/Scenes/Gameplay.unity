@@ -5835,66 +5835,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1257062014
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.3986897
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.983509
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997276739280768905, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6165987968330520554, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      propertyPath: m_Name
-      value: Zombie Bucket
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6165987968330520554, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1594051843}
-  m_SourcePrefab: {fileID: 100100000, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
 --- !u!1 &1271836750
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,71 +6663,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1459477722
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.340047
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.87457
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 387396961907218275, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560592581191061248, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_Name
-      value: Zombie Balloon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1904167555034569925, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134628205756008629, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 951a4095fe6d11d468eb4812c854bcdd, type: 3}
 --- !u!1 &1481361710
 GameObject:
   m_ObjectHideFlags: 0
@@ -7844,33 +7719,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1594051842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6165987968330520554, guid: a3d3da4215511e0499d39325d7e73422, type: 3}
-  m_PrefabInstance: {fileID: 1257062014}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1594051843
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594051842}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f5aa54a6758af114b9a7732555446c34, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1605358720
 GameObject:
   m_ObjectHideFlags: 0
@@ -10506,63 +10354,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &3129789506649720293
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.619955
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.9777753
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185256679437641911, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8322424742949253332, guid: 870374ea5b017944a851842598c30242, type: 3}
-      propertyPath: m_Name
-      value: Zombie Cone
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 870374ea5b017944a851842598c30242, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10575,6 +10366,3 @@ SceneRoots:
   - {fileID: 131144411}
   - {fileID: 96526034}
   - {fileID: 995816108}
-  - {fileID: 3129789506649720293}
-  - {fileID: 1257062014}
-  - {fileID: 1459477722}
