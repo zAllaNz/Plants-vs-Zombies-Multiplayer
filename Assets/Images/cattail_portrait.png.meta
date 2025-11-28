@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cattail_portrait_0: 1392277603174526638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

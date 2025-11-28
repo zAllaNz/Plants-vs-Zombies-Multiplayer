@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      peashooter_portrait_0: -1782506806701339331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

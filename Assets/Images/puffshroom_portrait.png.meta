@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      puffshroom_portrait_0: -2649460020545341751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

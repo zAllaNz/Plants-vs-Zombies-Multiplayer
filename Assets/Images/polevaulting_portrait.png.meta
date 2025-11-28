@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      polevaulting_portrait_0: 7825843037336486876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

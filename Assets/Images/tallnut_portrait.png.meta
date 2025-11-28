@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tallnut_portrait_0: -3126469043869615497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
