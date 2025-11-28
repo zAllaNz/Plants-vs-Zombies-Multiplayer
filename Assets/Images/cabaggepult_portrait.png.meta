@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cabaggepult_portrait_0: 4004145301283294137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

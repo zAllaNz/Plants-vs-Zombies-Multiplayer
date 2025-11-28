@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      squash_portrait_0: 5817848305389156686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

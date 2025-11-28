@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      football_portrait_0: -1434351836840580815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
