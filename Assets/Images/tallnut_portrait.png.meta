@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: baa34cc22f229d2448353d0878d854e6
+guid: 5b289ace3908b99439cd56f327eba831
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: -3126469043869615497
+    second: tallnut_portrait_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: tallnut_portrait_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 108
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: 77a75e628fc8c94d0800000000000000
+      internalID: -3126469043869615497
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_0: -6470460504253458178
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,35 +2,31 @@ using UnityEngine;
 
 public class PuffShroomController : MonoBehaviour
 {
-    [Header("Game Elements")]
+    [Header("Configuração")]
     public GameObject sporePrefab;
     public Transform shootingPoint;
     public LayerMask zombieLayer;
 
-    [Header("Shooting Stats")]
+    [Header("Atributos")]
     public float fireRate = 1.5f;
-    
-    public float detectionRange = 3.5f;
+    public float detectionRange = 3.5f; // Alcance curto (aprox 1/3 da tela)
 
-    private bool hasTarget = false;
     private float nextFireTime = 0f;
 
     void Update()
     {
-        CheckForZombieInLane();
-
-        if (hasTarget && Time.time >= nextFireTime)
+        if (ZombieInRange() && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;
         }
     }
 
-    void CheckForZombieInLane()
+    bool ZombieInRange()
     {
+        // Raio curto
         RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, Vector2.right, detectionRange, zombieLayer);
-
-        hasTarget = (hit.collider != null);
+        return hit.collider != null;
     }
 
     void Shoot()
@@ -40,8 +36,10 @@ public class PuffShroomController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (shootingPoint == null) return;
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(shootingPoint.position, (Vector2)shootingPoint.position + Vector2.right * detectionRange);
+        if (shootingPoint != null)
+        {
+            Gizmos.color = Color.magenta; // Magenta para alcance curto
+            Gizmos.DrawLine(shootingPoint.position, shootingPoint.position + Vector3.right * detectionRange);
+        }
     }
 }
