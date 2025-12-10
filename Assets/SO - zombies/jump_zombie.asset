@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: jump_zombie
   m_EditorClassIdentifier: 
   zombieName: zombie_jump
-  zombiePrefab: {fileID: 1354424122944836749, guid: b1c7ae87a5ab69d459fb66e4f9aa16c5, type: 3}
+  zombiePrefab: {fileID: 4415869746485365665, guid: 2a381ff5d81c6c74b9def1fbb0891844, type: 3}
   brainCost: 125
   icon: {fileID: 4114996372627284005, guid: 0dfee2d3e0431ed4eadbb18401c8578e, type: 3}

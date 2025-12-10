@@ -29,13 +29,24 @@ public class CattailSpikeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verifica se tem o script zombie
+        // Tenta pegar o script específico do Zumbi do Balão
+        zombie_balao zumbiBalao = collision.GetComponentInParent<zombie_balao>();
+
+        
+        // Se for um zumbi de balão E ele estiver voando...
+        if (zumbiBalao != null && zumbiBalao.EstaVoando())
+        {
+            // ...o espinho ignora completamente!
+            return;
+        }
+
+        // Verifica se tem o script zombie genérico
         zombie scriptZumbi = collision.GetComponentInParent<zombie>();
 
         if (scriptZumbi != null)
         {
             scriptZumbi.tomarDano(damage);
-            Destroy(gameObject);
+            Destroy(gameObject); // O espinho só se destrói se acertar um zumbi no chão
         }
     }
 }

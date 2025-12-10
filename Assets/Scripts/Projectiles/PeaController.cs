@@ -12,19 +12,25 @@ public class PeaController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // MUDANÇA: Não verificamos mais a Tag primeiro.
-        // Tentamos pegar o script 'zombie' diretamente no objeto ou nos pais dele.
+        // Tenta pegar o script específico do Zumbi do Balão
+        zombie_balao zumbiBalao = collision.GetComponentInParent<zombie_balao>();
+
+       
+        // Se for um zumbi de balão E ele estiver voando...
+        if (zumbiBalao != null && zumbiBalao.EstaVoando())
+        {
+            // ...o espinho ignora completamente!
+            return;
+        }  
+        // Verifica se tem o script zombie genérico
         zombie scriptZumbi = collision.GetComponentInParent<zombie>();
 
-        // Se encontrou o script, significa que É um zumbi válido
         if (scriptZumbi != null)
         {
             scriptZumbi.tomarDano(damage);
-            Destroy(gameObject); // Destrói a ervilha
+            Destroy(gameObject); // O espinho só se destrói se acertar um zumbi no chão
         }
-        // Se bateu em algo que NÃO tem o script zombie (ex: outra planta), apenas ignora e passa reto.
     }
-
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

@@ -17,6 +17,15 @@ public class zombie : MonoBehaviour
     protected float proximoAtaque;
     protected bool estaAtacando = false;
 
+    // variaveis de animação 
+    protected Animator anim;
+
+    //  Start para inicializar o Animator
+    protected virtual void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     // O método Update é chamado a cada frame
     protected virtual void Update()
     {
@@ -29,12 +38,21 @@ public class zombie : MonoBehaviour
         {
             // Se sim, o zumbi para de andar e começa a atacar
             estaAtacando = true;
+
+            // colocando a animação
+            if (anim != null) anim.SetBool("estaAtacando", true); 
+
             Atacar(hit.collider.gameObject);
         }
         else
         {
             // Se não, o zumbi volta a andar
             estaAtacando = false;
+
+            // AVISA O ANIMATOR: "Parei de comer, volta a andar!"
+            if (anim != null) anim.SetBool("estaAtacando", false);
+
+
             Mover();
         }
 
@@ -77,7 +95,17 @@ public class zombie : MonoBehaviour
 
     public void Morrer()
     {
-        // Adicionar uma animação de morte, som, etc. futuramente 
-        Destroy(gameObject);
+        // Desliga o colisor para ele parar de apanhar 
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        //  Desliga este script para ele parar de andar/atacar no Update
+        this.enabled = false;
+
+        // Toca a animação de morte
+        if (anim != null) anim.SetTrigger("Morreu");
+
+        // 4. Destrói o objeto com atraso (ex: 1 segundo) 
+        Destroy(gameObject, 1.0f);
     }
 }

@@ -1,11 +1,7 @@
-
-
 using UnityEngine;
-using System; 
+using System;
 
 [System.Serializable]
-
-
 public class Cacto : Plant
 {
     [Header("Cacto - Visuais")]
@@ -15,35 +11,45 @@ public class Cacto : Plant
 
     [Header("Cacto - Detecção")]
     public float alcanceDeteccao = 15f; // Quão longe na fileira ele "vê"
-    public LayerMask camadaZumbi;      // Em qual layer os zumbis estão
+    public LayerMask camadaZumbi;       // Em qual layer os zumbis estão (Layer "Zombie")
 
     [Header("Cacto - Ataque")]
-    public GameObject prefabProjetil;    // O "espinho" que ele atira
-    public Transform pontoDeDisparo;   // O local de onde o espinho sai
-    public float taxaDeDisparo = 1.8f; // Atira a cada 1.8s
+    public GameObject prefabProjetil;   // O prefab "tiro_cacto"
+
+    [Header("Ajuste de Mira (Altura)")]
+    public float alturaNormal = 0f;     // A altura Y da boca quando ele está BAIXO
+    public float alturaEsticado = 0.8f; // A altura Y da boca quando ele está ALTO 
+
+    // Mudei o nome para garantir que o Inspector atualize e pare de dar erro
+    public Transform LocalDeTiro;
+
+    public float taxaDeDisparo = 1.8f;  // Atira a cada 1.8s
     private float timerDisparo;
 
-    private bool estaEsticado = false; // Controla o estado (normal/esticado)
+    private bool estaEsticado = false;
+    private Animator animcacto; // Controla o estado (normal/esticado)
 
-  
+    private float alturaAlvo;
+
+
     protected override void Start()
     {
-        // CHAMA A LÓGICA DO PAI (Plant.cs)
+        // 1. CHAMA A LÓGICA DO PAI (Plant.cs) para registrar no GameManager
         base.Start();
 
-        //  LÓGICA PRÓPRIA DO CACTO
+        animcacto = GetComponent<Animator>();
         meuSpriteRenderer = GetComponent<SpriteRenderer>();
-        spriteNormal = meuSpriteRenderer.sprite; // Salva o sprite "normal"
+        spriteNormal = meuSpriteRenderer.sprite; // Salva o sprite "normal" atual
         timerDisparo = taxaDeDisparo; // Prepara o primeiro disparo
     }
 
-    //  UPDATE É CHAMADO A CADA FRAME
+    // UPDATE É CHAMADO A CADA FRAME
     void Update()
     {
-        // Roda a lógica de detecção
+        // A. Roda a lógica de detecção (procura balões)
         VerificarZumbisBalao();
 
-        // Roda a lógica de ataque
+        // B. Roda a lógica de ataque (tiro normal)
         timerDisparo -= Time.deltaTime;
         if (timerDisparo <= 0)
         {
@@ -51,26 +57,27 @@ public class Cacto : Plant
         }
     }
 
+ 
+
     void VerificarZumbisBalao()
     {
-        // Solta um raio que detecta TODOS os zumbis na fileira
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.right, alcanceDeteccao, camadaZumbi);
-
         bool balaoEncontrado = false;
 
-        // 5. Procura por um zumbi de balão
         foreach (RaycastHit2D hit in hits)
         {
-            // Se o zumbi atingido tiver o script "zombi_balao", encontramos.
-   
-            if (hit.collider.GetComponent<zombie_balao>() != null)
+            // Pega o script do zumbi
+            zombie_balao scriptBalao = hit.collider.GetComponent<zombie_balao>();
+
+            // Verifica se o script existe E SE ELE ESTÁ VOANDO
+            if (scriptBalao != null && scriptBalao.EstaVoando())
             {
                 balaoEncontrado = true;
-                break; // Achamos um, não precisa mais procurar
+                break;
             }
         }
 
-        // 6. Gerencia o estado (Esticar ou Encolher)
+        // Gerencia o visual (Esticar ou Encolher)
         if (balaoEncontrado && !estaEsticado)
         {
             Esticar();
@@ -83,28 +90,62 @@ public class Cacto : Plant
 
     void Esticar()
     {
-        Debug.Log("FUNÇÃO ESTICAR FOI CHAMADA!");
         estaEsticado = true;
-        meuSpriteRenderer.sprite = spriteEsticado;
-    
+
+        // Avisa o Animator (Visual)
+        if (animcacto != null) animcacto.SetBool("TaEsticado", true);
+
+        // Sobe a Mira (Físico)
+        if (LocalDeTiro != null)
+        {
+            // Mantém o X e Z, muda só o Y para cima
+            LocalDeTiro.localPosition = new Vector3(LocalDeTiro.localPosition.x, alturaEsticado, LocalDeTiro.localPosition.z);
+        }
+
     }
 
     void Encolher()
     {
+        // Debug para ver se ele entra aqui
+        Debug.Log("ENCOLHENDO! Movendo mira para: " + alturaAlvo);
+
         estaEsticado = false;
-        meuSpriteRenderer.sprite = spriteNormal;
+
+        // 1. Avisa o Animator (Visual)
+        if (animcacto != null) animcacto.SetBool("TaEsticado", false);
+
+        // 2. Desce a Mira (Físico)
+        if (LocalDeTiro != null)
+        {
+            // Volta o Y para a altura normal
+            LocalDeTiro.localPosition = new Vector3(LocalDeTiro.localPosition.x, alturaNormal, LocalDeTiro.localPosition.z);
+   
+        }
     }
 
     void Atirar()
     {
-        timerDisparo = taxaDeDisparo; // Reseta o timer
+        timerDisparo = taxaDeDisparo;
 
-        // Só atira se tiver um zumbi (qualquer) na frente
-        RaycastHit2D hitZumbi = Physics2D.Raycast(pontoDeDisparo.position, Vector2.right, alcanceDeteccao, camadaZumbi);
+        // Desenha a linha para você ver se a mira está na altura certa
+        if (LocalDeTiro != null)
+        {
+            Debug.DrawRay(LocalDeTiro.position, Vector2.right * alcanceDeteccao, Color.red, 0.1f);
+        }
+
+        // Usa o pontoDeDisparo atual (que já foi movido para cima ou para baixo)
+        RaycastHit2D hitZumbi = Physics2D.Raycast(LocalDeTiro.position, Vector2.right, alcanceDeteccao, camadaZumbi);
 
         if (hitZumbi.collider != null)
         {
-            Instantiate(prefabProjetil, pontoDeDisparo.position, Quaternion.identity);
+            // O mesmo gatilho serve para os dois ataques!
+            if (animcacto != null) animcacto.SetTrigger("atirar");
+
+            // Cria o tiro
+            if (prefabProjetil != null && LocalDeTiro != null)
+            {
+                Instantiate(prefabProjetil, LocalDeTiro.position, Quaternion.identity);
+            }
         }
     }
 }

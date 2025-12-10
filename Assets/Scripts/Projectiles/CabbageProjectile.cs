@@ -45,6 +45,15 @@ public class CabbageProjectile : MonoBehaviour
         // Se o alvo ainda existe
         if (targetZombie != null)
         {
+
+            // Tenta pegar o script especifico do balão
+            zombie_balao scriptBalao = targetZombie.GetComponent<zombie_balao>();
+
+            // Se for um balão E estiver voando
+            if (scriptBalao != null && scriptBalao.EstaVoando())
+            {
+                return; // Sai da função imediatamente
+            }
             // Busca o script no alvo
             zombie scriptZumbi = targetZombie.GetComponent<zombie>();
             

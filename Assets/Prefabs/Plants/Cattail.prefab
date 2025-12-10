@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4701877971892464979}
   - component: {fileID: -1994450886345353207}
   - component: {fileID: 239492700873687383}
+  - component: {fileID: 3772418393947753959}
   m_Layer: 10
   m_Name: Cattail
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3656401736908450092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6296928224e2f4aa34d0a7005e09b6, type: 3}
+  m_Script: {fileID: 11500000, guid: de241c97a86df1d40a0d6bcea54f3864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spikePrefab: {fileID: 3742831736776514529, guid: c95350e603f085a4b84267fb9992101e, type: 3}
@@ -205,7 +206,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a6a95741036714f9efc496d4e15b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 150
+--- !u!114 &3772418393947753959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656401736908450092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31a507e09acd9d448cdf1a44128ceda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 150
 --- !u!1 &9188827793482859068
 GameObject:
   m_ObjectHideFlags: 0

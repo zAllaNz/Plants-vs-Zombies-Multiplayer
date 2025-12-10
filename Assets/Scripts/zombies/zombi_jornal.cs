@@ -1,81 +1,66 @@
 using UnityEngine;
 using System;
 
-
 [System.Serializable]
-
 public class zombi_jornal : zombie
 {
     [Header("Atributos do Jornal")]
-    public float saudeParaEnfurecer = 50; // Com quanta vida ele perde o jornal
-    public GameObject jornalVisual; // Arraste o sprite do jornal aqui ( no momento não vou fazer isso) 
+    public float saudeParaEnfurecer = 50;
+    public GameObject jornalVisual;
 
     [Header("Stats Enfurecidas (Sem Jornal)")]
     public float velocidadeEnfurecido = 3.0f;
     public int danoEnfurecido = 20;
     public float taxaAtaqueEnfurecida = 0.5f;
 
-    [Header("Controle Visual")]
-    public Sprite spriteEnfurecido; // Arraste a imagem "zombi com raiva" aqui
-    private SpriteRenderer meuSpriteRenderer;
-
     // Variável de controle
     private bool ce_ta_bravo = false;
 
-    void Start()
+    // Use override e chame base.Start() para o Animator do pai 
+    protected override void Start()
     {
-        // Pega o SpriteRenderer do *próprio* objeto
-        meuSpriteRenderer = GetComponent<SpriteRenderer>();
-
+        base.Start();
+       
     }
 
     private void Enfurecer()
     {
-        
-
-        //Marca como enfurecido (para não rodar isso de novo)
+        // Marca como enfurecido
         ce_ta_bravo = true;
 
-        // 2. Remove o visual do jornal
+        //  Remove o objeto do jornal (se houver um objeto separado)
         if (jornalVisual != null)
         {
             Destroy(jornalVisual);
         }
 
-        
+        // Atualiza os status para ficar "monstrão"
         velocidade = velocidadeEnfurecido;
         dano = danoEnfurecido;
         taxaAtaque = taxaAtaqueEnfurecida;
 
-        // Allan, muda a animação aqui 
-        // GetComponent<Animator>().SetBool("isEnraged", true);
-
-        if (meuSpriteRenderer != null && spriteEnfurecido != null)
+    
+        if (anim != null)
         {
-            meuSpriteRenderer.sprite = spriteEnfurecido;
+            anim.SetBool("IsEnraged", true);
         }
     }
 
     public override void tomarDano(int danoRecebido)
     {
-        // Não faz nada se já estiver enfurecido ou morto
+        // Se já está bravo ou morto, segue a vida normal
         if (ce_ta_bravo || saude <= 0)
         {
-            base.tomarDano(danoRecebido); // Continua tomando dano normal
+            base.tomarDano(danoRecebido);
             return;
         }
 
-        // Chama a função base para reduzir a saúde
         base.tomarDano(danoRecebido);
 
         // Verifica se é hora de ficar enfurecido
-        // Checa se a saúde caiu abaixo do limite E se ele ainda não está enfurecido
         if (!ce_ta_bravo && saude <= saudeParaEnfurecer)
         {
             Enfurecer();
         }
     }
-
-    
-
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public class BungeeZombie : MonoBehaviour
-      
+
 {
     [Header("Alvo")]
     // Esta variável será definida pelo hab_bungee.cs no momento da invocação
@@ -14,7 +14,7 @@ public class BungeeZombie : MonoBehaviour
     // Tempo que o zumbi espera antes de "cair" e sequestrar
     public float tempoDeEspera = 6.0f;
     public float VelocidadeDeDescida = 20f;
-    public float  VelocidadeDeSubida = 15f;
+    public float VelocidadeDeSubida = 15f;
 
     [Header("posições")]
     public Vector3 alturaSpawn = new Vector3(0, 3, 0); // Quão alto ele aparece
@@ -22,6 +22,7 @@ public class BungeeZombie : MonoBehaviour
     private Vector3 posicaoAlvoVetor; // Posição exata da planta
     private Vector3 ajusteDeAltura = new Vector3(0, 1, 0);
 
+  
 
     void Start()
     {
@@ -31,95 +32,80 @@ public class BungeeZombie : MonoBehaviour
             Debug.LogError("BungeeZombie foi invocado sem uma plantaAlvo!");
             Destroy(gameObject); // Se não tem alvo, se auto-destrói
             return;
-            }
+        }
 
-            posicaoAlvoVetor = plantaAlvo.transform.position;
+        posicaoAlvoVetor = plantaAlvo.transform.position;
 
-            // Calcula e salva a posição inicial 
-            posicaoInicial = posicaoAlvoVetor + alturaSpawn;
+        // Calcula e salva a posição inicial 
+        posicaoInicial = posicaoAlvoVetor + alturaSpawn;
 
-            // Define a posição inicial do zumbi
-            transform.position = posicaoInicial;
+        // Define a posição inicial do zumbi
+        transform.position = posicaoInicial;
 
-            StartCoroutine(SequestrarPlantaRoutine());
+        StartCoroutine(SequestrarPlantaRoutine());
     }
 
     IEnumerator SequestrarPlantaRoutine()
     {
-
-        // É AQUI QUE VOCÊ COLOCA A ANIMAÇÃO DELE DESCENDO ALLAN ---
-        // (Por enquanto, vamos fazer sem animação)
-
-        // 1 descida 
-        while (Vector3.Distance(transform.position, posicaoAlvoVetor+ajusteDeAltura) > 0.01f)
+        //  DESCIDA RÁPIDA 
+        while (Vector3.Distance(transform.position, posicaoAlvoVetor + ajusteDeAltura) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(
-             transform.position,      // Posição atual
-             posicaoAlvoVetor+ajusteDeAltura,        // Posição do alvo
+             transform.position,
+             posicaoAlvoVetor + ajusteDeAltura,
              VelocidadeDeDescida * Time.deltaTime);
 
             yield return null;
-
         }
-        ;
 
-        // fica parado 
-        // O jogador vê o zumbi lá em cima (ou a sombra dele)
-        Debug.Log("BungeeZombie mirando em " + plantaAlvo.name + ". Esperando " + tempoDeEspera + "s...");
+        // ESPERA DRAMÁTICA
+        Debug.Log("BungeeZombie esperando...");
         yield return new WaitForSeconds(tempoDeEspera);
-        Debug.Log("BungeeZombie SEQUESTRANDO " + plantaAlvo.name);
 
-       
-
-        // 2 descida 
-
+        //  DESCIDA FINAL
         while (Vector3.Distance(transform.position, posicaoAlvoVetor) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(
-             transform.position,      // Posição atual
-             posicaoAlvoVetor,        // Posição do alvo
+             transform.position,
+             posicaoAlvoVetor,
              VelocidadeDeDescida * Time.deltaTime);
 
             yield return null;
-
-
         }
 
-        // Verifica se a planta ainda existe (ela pode ter sido destruída)
+        //  PEGAR A PLANTA 
         if (plantaAlvo != null)
         {
-            // Pega o script da planta e chama o método Die()
+            // Transforma a planta em filha do zumbi para ela subir junto
+            plantaAlvo.transform.SetParent(this.transform);
+
+            // Desliga o script da planta para ela parar de atirar enquanto sobe
             Plant scriptPlanta = plantaAlvo.GetComponent<Plant>();
-            if (scriptPlanta != null)
-            {
-                plantaAlvo.transform.SetParent(this.transform);
-            }
-            else
-            {
-                // Se não tiver o script, apenas destrói o objeto
-                Destroy(plantaAlvo);
-            }
+            if (scriptPlanta != null) scriptPlanta.enabled = false;
         }
 
+        // SUBIDA PARA O ESPAÇO 
 
-        // --- É AQUI QUE VOCÊ COLOCA A ANIMAÇÃO DELE SUBINDO ALLAN ---
-        //subindo 
-        while (Vector3.Distance(transform.position, posicaoInicial) > 0.01f)
+        // Define um ponto bem alto acima da posição atual (ex: +20 unidades no Y)
+        // Isso garante que ele saia da tela independente de onde a planta estava
+        Vector3 pontoDeFuga = transform.position + (Vector3.up * 20.0f);
+
+        // Enquanto ele não chegar lá no alto...
+        while (Vector3.Distance(transform.position, pontoDeFuga) > 0.1f)
         {
-            // Move o zumbi um pouco em direção à posição inicial
             transform.position = Vector3.MoveTowards(
                 transform.position,
-                posicaoInicial,
+                pontoDeFuga, // Agora o alvo é o nosso ponto de fuga
                 VelocidadeDeSubida * Time.deltaTime
             );
-           
 
-            // Espera até o próximo frame
             yield return null;
         }
 
+        // Tchau!
         Destroy(gameObject);
-        Destroy(plantaAlvo);
-       
+
+        // Se a planta ainda existir (estiver presa nele), destrói ela também
+        if (plantaAlvo != null) Destroy(plantaAlvo);
     }
 }

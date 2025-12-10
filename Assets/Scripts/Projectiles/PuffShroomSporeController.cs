@@ -25,7 +25,18 @@ public class PuffShroomSporeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Busca o script zombie de forma universal (funciona para jornal, balão, cópias, etc)
+        // Tenta pegar o script específico do Zumbi do Balão
+        zombie_balao zumbiBalao = collision.GetComponentInParent<zombie_balao>();
+
+       
+        // Se for um zumbi de balão E ele estiver voando...
+        if (zumbiBalao != null && zumbiBalao.EstaVoando())
+        {
+      
+            return;
+        }
+
+        // Verifica se tem o script zombie genérico
         zombie scriptZumbi = collision.GetComponentInParent<zombie>();
 
         if (scriptZumbi != null)
