@@ -1,69 +1,99 @@
 using UnityEngine;
+using System.Collections; // Necessário para Corrotinas
 
 public class CattailController : MonoBehaviour
 {
-    [Header("Configuração")]
-    public GameObject spikePrefab;
-    public Transform shootingPoint;
+    [Header("Configuração Essencial")]
+    public GameObject spikePrefab;   // Prefab do Espinho
+    public Transform shootingPoint;  // Ponto de saída
+    public LayerMask zombieLayer;    // Layer "zombies"
 
     [Header("Atributos")]
-    public float fireRate = 1.0f;
+    public float fireRate = 1.0f;    // Cadência de tiro
+    public float globalRange = 50f;  // Alcance global
+    
+    [Header("Sincronia Visual")]
+    public float attackDelay = 0.2f; // TEMPO DE ESPERA PARA O TIRO SAIR
 
     private float nextFireTime = 0f;
-    private Transform currentTarget;
     private Animator animator;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        
+        if (spikePrefab == null)
+            Debug.LogError("ERRO: Cattail sem Prefab do Espinho!");
     }
 
     void Update()
     {
-        // Encontra o alvo a cada frame (ou poderia otimizar para rodar menos vezes)
-        FindPriorityTarget();
+        // 1. Encontra o zumbi prioritário
+        Transform alvo = FindPriorityTarget();
 
-        if (currentTarget != null && Time.time >= nextFireTime)
+        // 2. Se achou alguém e pode atirar
+        if (alvo != null && Time.time >= nextFireTime)
         {
-            if (animator != null) animator.SetTrigger("Attack");
-            Shoot();
+            // Inicia a rotina sincronizada
+            StartCoroutine(ShootRoutine(alvo));
+            
+            // Define o próximo tempo de tiro
             nextFireTime = Time.time + fireRate;
         }
     }
 
-    void FindPriorityTarget()
+    Transform FindPriorityTarget()
     {
-        // Encontra TODOS os objetos com a tag Zombie
-        GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
-        
-        float minX = Mathf.Infinity;
-        Transform bestTarget = null;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, globalRange, zombieLayer);
 
-        foreach (GameObject z in zombies)
+        Transform melhorAlvo = null;
+        float menorX = Mathf.Infinity;
+
+        foreach (var hit in hits)
         {
-            // Verifica se tem o script de zumbi (para garantir que é um inimigo válido)
-            if (z.GetComponent<zombie>() != null)
+            // Filtra zumbi válido (pai ou filho)
+            if (hit.GetComponentInParent<zombie>() != null)
             {
-                // Procura o menor X (mais à esquerda = mais perigoso)
-                if (z.transform.position.x < minX)
+                // Busca o menor X (mais à esquerda)
+                if (hit.transform.position.x < menorX)
                 {
-                    minX = z.transform.position.x;
-                    bestTarget = z.transform;
+                    menorX = hit.transform.position.x;
+                    melhorAlvo = hit.transform;
                 }
             }
         }
-        currentTarget = bestTarget;
+        return melhorAlvo;
     }
 
-    void Shoot()
+    IEnumerator ShootRoutine(Transform target)
     {
-        GameObject spike = Instantiate(spikePrefab, shootingPoint.position, Quaternion.identity);
-        
-        // Configura o alvo no projétil
-        CattailSpikeController spikeScript = spike.GetComponent<CattailSpikeController>();
-        if (spikeScript != null)
+        // 1. Toca a animação IMEDIATAMENTE
+        if (animator != null)
         {
-            spikeScript.SetTarget(currentTarget);
+            animator.SetTrigger("Attack");
         }
+
+        // 2. ESPERA o tempo visual do disparo
+        yield return new WaitForSeconds(attackDelay);
+
+        // 3. Verifica se o alvo ainda existe (pode ter morrido na espera)
+        if (target != null && spikePrefab != null)
+        {
+            // Cria o espinho
+            GameObject spike = Instantiate(spikePrefab, shootingPoint.position, Quaternion.identity);
+
+            // Configura o alvo do espinho
+            CattailSpikeController spikeScript = spike.GetComponent<CattailSpikeController>();
+            if (spikeScript != null)
+            {
+                spikeScript.SetTarget(target);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, globalRange);
     }
 }

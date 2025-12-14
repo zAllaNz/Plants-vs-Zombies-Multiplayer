@@ -2,26 +2,28 @@ using UnityEngine;
 
 public class PlantHealth : MonoBehaviour
 {
-    public int maxHealth = 10;
-    private int currentHealth;
+    [Header("Atributos de Vida")]
+    public int saude = 100; 
 
-    void Start()
+    // O zumbi chama esta função quando morde
+    public void TakeDamage(int dano)
     {
-        currentHealth = maxHealth;
-    }
+        saude -= dano;
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
+        // VERIFICAÇÃO CRÍTICA: Se a vida zerou (ou ficou negativa)
+        if (saude <= 0)
         {
             Die();
         }
     }
 
-    private void Die()
+    public void Die()
     {
+        // Debug para você ver no console que funcionou
+        Debug.Log(gameObject.name + " morreu e foi excluido!");
+
+        // COMANDO DE EXCLUSÃO
+        // Destrói o objeto da planta imediatamente
         Destroy(gameObject);
     }
 }

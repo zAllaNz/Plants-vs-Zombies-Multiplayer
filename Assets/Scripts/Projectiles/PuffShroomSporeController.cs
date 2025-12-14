@@ -4,7 +4,9 @@ public class PuffShroomSporeController : MonoBehaviour
 {
     public float speed = 8f;
     public int damage = 20;
-    public float maxDistance = 4.0f; 
+    
+    [Header("Alcance do Tiro")]
+    public float maxDistance = 4.0f; // Deve ser um pouco maior que o detectionRange da planta
 
     private Vector3 startPosition;
 
@@ -15,8 +17,10 @@ public class PuffShroomSporeController : MonoBehaviour
 
     void Update()
     {
+        // Move para a direita
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
+        // Se viajar mais que o permitido, desaparece (mecânica única do Puff-shroom)
         if (Vector3.Distance(startPosition, transform.position) >= maxDistance)
         {
             Destroy(gameObject);
@@ -25,7 +29,7 @@ public class PuffShroomSporeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Busca o script zombie de forma universal (funciona para jornal, balão, cópias, etc)
+        // Lógica Universal: Pega script no pai ou no filho
         zombie scriptZumbi = collision.GetComponentInParent<zombie>();
 
         if (scriptZumbi != null)

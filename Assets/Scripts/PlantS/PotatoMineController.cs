@@ -1,46 +1,65 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class PotatoMineController : MonoBehaviour
 {
     [Header("Configuração")]
-    public GameObject explosionPrefab; // Precisa criar esse prefab
-    public float armingTime = 14f; // Tempo para armar
-    
-    private bool isArmed = false;
+    public GameObject explosionPrefab; // O efeito de explosão (que dá dano)
+    public float armingTime = 14f;     // Tempo para ficar pronta (padrão é alto, diminua para testar)
+
+    private bool isArmed = false;      // Controle de estado
     private Animator animator;
-    private Collider2D myCollider; // Para desligar colisão enquanto arma
+    private Collider2D myCollider;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        myCollider = GetComponent<Collider2D>();
         
-        // Começa "intangível" para os zumbis não ativarem antes da hora
-        if (myCollider) myCollider.enabled = false;
+        // Tenta pegar o colisor (pode estar no pai ou filho)
+        myCollider = GetComponent<Collider2D>();
+        if (myCollider == null) myCollider = GetComponentInChildren<Collider2D>();
 
+        if (myCollider != null)
+        {
+            // Começa INTANGÍVEL (zumbis passam por cima sem ativar)
+            myCollider.enabled = false;
+        }
+        else
+        {
+            Debug.LogError("PotatoMine: Faltando BoxCollider2D!");
+        }
+
+        // Inicia contagem
         StartCoroutine(ArmRoutine());
     }
 
     IEnumerator ArmRoutine()
     {
-        // Toca animação de "plantando/esperando" (padrão é Idle Unarmed)
+        // Espera o tempo de armar
         yield return new WaitForSeconds(armingTime);
 
-        // ARMOU!
+        // --- ARMOU! ---
         isArmed = true;
-        if (myCollider) myCollider.enabled = true; // Agora pode colidir
+
+        // Ativa o colisor para detectar pisadas
+        if (myCollider != null) myCollider.enabled = true;
         
-        // Muda animação para "Pronta"
-        if (animator) animator.SetTrigger("Armed");
+        // Muda animação (de enterrada para antena para fora)
+        if (animator != null) animator.SetTrigger("Armed");
+        
+        Debug.Log("PotatoMine: Armada e pronta!");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Segurança: Só explode se estiver armada
         if (!isArmed) return;
 
-        // Verifica se é zumbi de forma universal
-        if (collision.GetComponentInParent<zombie>() != null)
+        // DETECÇÃO UNIVERSAL:
+        // Verifica se o objeto que pisou é um zumbi (ou parte de um)
+        zombie scriptZumbi = collision.GetComponentInParent<zombie>();
+
+        if (scriptZumbi != null)
         {
             Explode();
         }
@@ -48,10 +67,14 @@ public class PotatoMineController : MonoBehaviour
 
     void Explode()
     {
-        // Instancia a explosão (que vai dar o dano)
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        
-        // Destroi a batata
+        // 1. Cria o objeto da explosão no mesmo lugar
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+
+        // 2. DESTRÓI A MINA BATATA IMEDIATAMENTE
+        // Isso faz ela sumir do cenário
         Destroy(gameObject);
     }
 }

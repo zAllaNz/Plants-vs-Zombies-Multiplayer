@@ -4,10 +4,10 @@ using System;
 [System.Serializable]
 public class zombie_balao : zombie
 {
-    [Header("Atributos do Balão")]
-    public float altitudeDeVoo = 1.0f; // Quão mais alto ele voa
-    public GameObject balaoVisual;     // Arraste o Sprite do balão aqui
-    public Sprite spriteCaido;         // A imagem dele sem o balão
+    [Header("Atributos do Balï¿½o")]
+    public float altitudeDeVoo = 1.0f; // Quï¿½o mais alto ele voa
+    public GameObject balaoVisual;     // Arraste o Sprite do balï¿½o aqui
+    public Sprite spriteCaido;         // A imagem dele sem o balï¿½o
 
     // Nossos interruptores de estado
     private bool estaVoando = true;
@@ -24,13 +24,13 @@ public class zombie_balao : zombie
 
     }
 
-    // Substitui a lógica do Pai
+    // Substitui a lï¿½gica do Pai
     protected override void Update()
     {
         if (estaVoando)
         {
             // ...ele ignora as plantas e apenas se move para a esquerda.
-            Mover(); // A função Mover() do pai ainda funciona!
+            Mover(); // A funï¿½ï¿½o Mover() do pai ainda funciona!
 
             // Checa se morreu (caso algo mate ele no ar)
             if (saude <= 0)
@@ -52,12 +52,12 @@ public class zombie_balao : zombie
      
         if (estaVoando)
         {
-            // O primeiro tiro ESTOURA o balão em vez de dar dano.
-            Debug.Log("BALÃO ESTOUROU!");
+            // O primeiro tiro ESTOURA o balï¿½o em vez de dar dano.
+            Debug.Log("BALï¿½O ESTOUROU!");
             EstourarBalao();
 
-            // Não chamamos base.tomarDano() para que o "1 tiro"
-            // apenas estoure o balão e não tire vida.
+            // Nï¿½o chamamos base.tomarDano() para que o "1 tiro"
+            // apenas estoure o balï¿½o e nï¿½o tire vida.
         }
        
         else
@@ -67,26 +67,30 @@ public class zombie_balao : zombie
         }
     }
 
-    // A função de transição
+    // A funï¿½ï¿½o de transiï¿½ï¿½o
     private void EstourarBalao()
     {
         estaVoando = false; // Muda o estado
 
-        //  Remove o visual do balão
+        //  Remove o visual do balï¿½o
         if (balaoVisual != null)
         {
             Destroy(balaoVisual);
         }
 
-        // Troca o sprite principal para "caído"
+        // Troca o sprite principal para "caï¿½do"
         if (meuSpriteRenderer != null && spriteCaido != null)
         {
             meuSpriteRenderer.sprite = spriteCaido;
         }
 
-        //  Devolve o zumbi para o chão
+        //  Devolve o zumbi para o chï¿½o
         transform.position -= new Vector3(0, altitudeDeVoo, 0);
 
         
+    }
+    public bool IsFlying()
+    {
+        return estaVoando;
     }
 }

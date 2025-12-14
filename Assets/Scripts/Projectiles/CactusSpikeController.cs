@@ -7,30 +7,24 @@ public class CactusSpikeController : MonoBehaviour
 
     void Update()
     {
-        // Move sempre para a direita
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verifica se bateu em algo com a tag "Zombie"
-        if (collision.CompareTag("Zombie"))
-        {
-            // Tenta pegar o script "zombie" do grupo
-            zombie scriptZumbi = collision.GetComponent<zombie>();
+        // Lógica Universal: Pega o zumbi (pai ou filho)
+        zombie scriptZumbi = collision.GetComponentInParent<zombie>();
 
-            if (scriptZumbi != null)
-            {
-                scriptZumbi.tomarDano(damage);
-            }
-            
-            // Destrói o espinho após bater
+        if (scriptZumbi != null)
+        {
+            // O script do zumbi_balao já sabe que o primeiro dano estoura o balão
+            scriptZumbi.tomarDano(damage);
             Destroy(gameObject);
         }
     }
 
-    void OnBecameInvisible()
+    private void OnBecameInvisible()
     {
-        Destroy(gameObject); // Limpa memória se sair da tela
+        Destroy(gameObject);
     }
 }
