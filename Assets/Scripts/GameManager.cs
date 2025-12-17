@@ -53,8 +53,7 @@ public class GameManager : MonoBehaviour
         currentSun = 250;
         currentBrains = 300; // Exemplo de valor inicial
         UpdateBrainsText();
-        //StartCoroutine(SpawnSunRoutine());
-        StartCoroutine(SpawnBrainRoutine());
+        StartCoroutine(SpawnSunRoutine());
     }
 
 
@@ -116,30 +115,6 @@ public class GameManager : MonoBehaviour
 
             SpawnSun();
         }
-    }
-
-    IEnumerator SpawnBrainRoutine()
-    {
-        while (true)
-        {
-            float waitTime = Random.Range(minSpawnInterval, maxSpawnInterval);
-            yield return new WaitForSeconds(waitTime);
-
-            SpawnBrains();
-            UpdateBrainsText();
-        } 
-    }
-
-    void SpawnBrains()
-    {
-        float randomX = Random.Range(minX, maxX);
-        Vector2 spawnPosition = new Vector2(randomX, spawnY);
-        GameObject brainObject = Instantiate(brainPrefab, spawnPosition, Quaternion.identity);
-
-        
-     
-
-        
     }
 
     void SpawnSun()

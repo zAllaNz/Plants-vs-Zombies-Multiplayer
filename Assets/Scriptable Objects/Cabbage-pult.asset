@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Cabbage-pult
   plantPrefab: {fileID: 3886558144169789758, guid: 301e16f845780be448e413b38cfb77f1, type: 3}
-  cardSprite: {fileID: -7476331924436112343, guid: abf10d586d684304c8895c3c89d13d24, type: 3}
+  cardSprite: {fileID: -7476331924436112343, guid: 1e228a6757c3af44985a3c1df124f64c, type: 3}
   sunCost: 100

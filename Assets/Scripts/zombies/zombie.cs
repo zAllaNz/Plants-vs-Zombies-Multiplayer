@@ -19,6 +19,7 @@ public class zombie : MonoBehaviour
 
     // variaveis de animação 
     protected Animator anim;
+    public ZombieSpawner spawner;
 
     //  Start para inicializar o Animator
     protected virtual void Start()
@@ -105,7 +106,8 @@ public class zombie : MonoBehaviour
         // Toca a animação de morte
         if (anim != null) anim.SetTrigger("Morreu");
 
-        // 4. Destrói o objeto com atraso (ex: 1 segundo) 
+        if (spawner != null)
+            spawner.OnZombieDeath();
         Destroy(gameObject, 1.0f);
     }
 }
