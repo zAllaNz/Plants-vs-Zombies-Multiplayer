@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Puff-shroom
   plantPrefab: {fileID: 8945271956358584158, guid: 425477fc63878e141b59e33f848051fa, type: 3}
-  cardSprite: {fileID: 2790310811729404575, guid: c69a65a921e6283498ce932a8e7b051f, type: 3}
+  cardSprite: {fileID: 2790310811729404575, guid: 54ec0c21598916c408b2ffe837ec6bb3, type: 3}
   sunCost: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Potato-mine
   plantPrefab: {fileID: 4939625884776909949, guid: 009f06d79863e7942814efa8fe2d278d, type: 3}
-  cardSprite: {fileID: -2226771746124785049, guid: f628d3921f1a2384eb94876b08dd11eb, type: 3}
+  cardSprite: {fileID: -2226771746124785049, guid: 081125dd7f8bb98458aa2e4f154d503b, type: 3}
   sunCost: 25

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Repeater
   plantPrefab: {fileID: 3629290554561612907, guid: 705dbfecd5813b748bc38f4f0a17f679, type: 3}
-  cardSprite: {fileID: -2992501390104060538, guid: 9a75a82fae6efab4e94002f88d62064d, type: 3}
+  cardSprite: {fileID: -2992501390104060538, guid: 26e8f08e881e9634d8bfc9cd0590d1fe, type: 3}
   sunCost: 200

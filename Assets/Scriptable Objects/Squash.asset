@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Squash
   plantPrefab: {fileID: 6177109138941091919, guid: 2241f260f0ba59b47b41031817559b29, type: 3}
-  cardSprite: {fileID: -3879942837491269518, guid: 5fbe63443cd6ed749858844a55018955, type: 3}
+  cardSprite: {fileID: -3879942837491269518, guid: 6d4dc6a3ed510e4478dc0aeee364c92b, type: 3}
   sunCost: 50
